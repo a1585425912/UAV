@@ -58,9 +58,12 @@ def greedy_bound(boxes, drones, route):
     return len(bins)
 
 
-def solve_area(area, boxes, drones, route, time_limit=120):
+def solve_area(area, boxes, drones, route, time_limit=120, required_trips=None):
     n = len(boxes)
-    kmax = greedy_bound(boxes, drones, route)
+    feasible_bound = greedy_bound(boxes, drones, route)
+    kmax = required_trips if required_trips is not None else feasible_bound
+    if not (1 <= kmax <= n):
+        raise ValueError(f"{area}: 架次数必须在 1 到 {n} 之间")
     caps = {g: safe_payload(drones[g], route)[0] for g in NAMES}
     x = {(b, t, g): len(NAMES) * (b * kmax + t) + j for b in range(n) for t in range(kmax) for j, g in enumerate(NAMES)}
     nx = len(x)
@@ -112,6 +115,7 @@ def solve_area(area, boxes, drones, route, time_limit=120):
                     for b in range(n):
                         upper[x[b, t, g]] = 0
                     continue
+                add({y[t, g]: 1, **{x[b, t, g]: -1 for b in range(n)}}, hi=0)
                 add({**{x[b, t, g]: boxes[b]["mass"] for b in range(n)}, y[t, g]: -min(caps[g], drone["payload"])}, hi=0)
                 add({**{x[b, t, g]: boxes[b]["volume"] for b in range(n)}, y[t, g]: -drone["volume"]}, hi=0)
                 add({e[t, g]: 1, y[t, g]: -(1 - drone["reserve"] / 100) * drone["energy"]}, hi=0)
@@ -154,16 +158,19 @@ def solve_area(area, boxes, drones, route, time_limit=120):
         return added
 
     # 第一阶段：架次数最少，逐次排除因能耗低估而不可行的整数解。
-    for _ in range(200):
-        result = optimize(trip_obj)
-        active, _ = inspect(result.x)
-        if all(real <= (1 - drones[g]["reserve"] / 100) * drones[g]["energy"] + 1e-8 for _, g, _, _, real in active):
-            break
-        if not refine(active):
-            raise RuntimeError(f"{area}: 能耗约束切平面停滞")
+    if required_trips is None:
+        for _ in range(200):
+            result = optimize(trip_obj)
+            active, _ = inspect(result.x)
+            if all(real <= (1 - drones[g]["reserve"] / 100) * drones[g]["energy"] + 1e-8 for _, g, _, _, real in active):
+                break
+            if not refine(active):
+                raise RuntimeError(f"{area}: 能耗约束切平面停滞")
+        else:
+            raise RuntimeError(f"{area}: 架次阶段超过迭代上限")
+        ntrips = len(active)
     else:
-        raise RuntimeError(f"{area}: 架次阶段超过迭代上限")
-    ntrips = len(active)
+        ntrips = required_trips
 
     # 第二阶段：全局能耗下界由 MILP 给出；真实能耗与下界闭合后停止。
     for _ in range(300):
@@ -201,7 +208,7 @@ def solve_area(area, boxes, drones, route, time_limit=120):
                      "能耗_kwh": real, "作业时间_s": operation_time(drones[g], route, len(ids)),
                      "返航SOC": detail["return_soc"]})
     assert Counter(bid for row in rows for bid in row["货箱编号列表"].split(",")) == Counter(b["id"] for b in boxes)
-    return rows, {"货箱数": n, "架次数": ntrips, "贪心可行上界": kmax,
+    return rows, {"货箱数": n, "架次数": ntrips, "贪心可行上界": feasible_bound,
                   "MILP调用次数": stats["milp_calls"], "能耗最优性绝对间隙_kWh": energy_gap,
                   "能耗切点数": {g: len(cuts[g]) for g in NAMES}}
 
