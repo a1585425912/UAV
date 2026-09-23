@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "boxes": 80,
+  "areas": 15,
+  "caps": 45,
+  "base_trips": 18,
+  "scenarios": 4,
+  "scenario_trips": 75
+}
