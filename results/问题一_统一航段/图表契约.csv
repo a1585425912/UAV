@@ -1,0 +1,10 @@
+﻿图文件前缀,核心结论,证据,图型
+raw_q1_distance_terrain,距离与地形暴露不完全同序,15条统一航段,散点
+raw_q1_box_count,S001箱数最多,80箱逐箱清单,柱状
+raw_q1_range_payload,载荷增加时航程下降,题面公式和机型参数,曲线
+process_q1_energy_boundary,S004的C型载荷受能量限制,能耗模型,曲线与阈值
+process_q1_rated_soc,部分额定满载架次不满足20%余量,45组满载试算,热力图
+process_q1_candidate_count,逐区完整候选数量随箱数变化,19525条可行候选,分组柱
+result_q1_safe_payload,45组安全载荷中6组由能量约束主导,安全载荷表,带数值热力图
+result_q1_trips_by_area,3个服务区各需2架次，其余各1架次,精确DP结果,柱状
+result_q1_trip_soc,全部18架次返航SOC不低于20%,最优架次表,点图
