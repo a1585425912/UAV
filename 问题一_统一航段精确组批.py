@@ -183,8 +183,8 @@ def main():
                           "candidate_count": len(candidates), "dp_states": states[args.smoke]["DP状态数"]}, ensure_ascii=False, indent=2))
         return
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, rows in (("safe_payload_3x15.csv", caps), ("safe_payload_details.csv", details),
-                       ("feasible_batches.csv", candidates), ("optimal_batches.csv", selected)):
+    for name, rows in (("最大安全载荷_45组.csv", caps), ("安全载荷能耗明细.csv", details),
+                       ("全部可行组批.csv", candidates), ("最优组批_逐架次.csv", selected)):
         write_csv(OUT / name, rows)
     assigned = [bid for row in selected for bid in row["货箱编号列表"].split(",")]
     expected = [b["id"] for group in boxes.values() for b in group]
@@ -196,7 +196,7 @@ def main():
                "operation_s": sum(r["作业时间_s"] for r in selected),
                "minimum_return_soc": min(r["返航SOC"] for r in selected),
                "model_trips": dict(Counter(r["机型"] for r in selected)), "candidate_rows": len(candidates), "areas": states}
-    (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "汇总.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 

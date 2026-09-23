@@ -48,10 +48,10 @@ def main():
     drones, boxes, routes = load_inputs()
     areas = sorted(boxes)
     short = [x[-3:] for x in areas]
-    caps = read_csv(OUT / "safe_payload_3x15.csv")
-    details = read_csv(OUT / "safe_payload_details.csv")
-    candidates = read_csv(OUT / "feasible_batches.csv")
-    chosen = read_csv(OUT / "optimal_batches.csv")
+    caps = read_csv(OUT / "最大安全载荷_45组.csv")
+    details = read_csv(OUT / "安全载荷能耗明细.csv")
+    candidates = read_csv(OUT / "全部可行组批.csv")
+    chosen = read_csv(OUT / "最优组批_逐架次.csv")
     contracts = []
 
     fig, ax = plt.subplots()

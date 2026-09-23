@@ -25,11 +25,11 @@ def main():
     boxes_raw = list(load_workbook(DATA / "物资需求与配送时限.xlsx", read_only=True, data_only=True).worksheets[1].values)
     boxes = {r[0]: r for r in boxes_raw[1:]}
     legs = {(r["起点"], r["终点"]): r for r in rows(ROOT / "results" / "有向航段几何参数.csv")}
-    caps = rows(OUT / "safe_payload_3x15.csv")
-    details = rows(OUT / "safe_payload_details.csv")
-    candidates = rows(OUT / "feasible_batches.csv")
-    chosen = rows(OUT / "optimal_batches.csv")
-    summary = json.loads((OUT / "summary.json").read_text(encoding="utf-8"))
+    caps = rows(OUT / "最大安全载荷_45组.csv")
+    details = rows(OUT / "安全载荷能耗明细.csv")
+    candidates = rows(OUT / "全部可行组批.csv")
+    chosen = rows(OUT / "最优组批_逐架次.csv")
+    summary = json.loads((OUT / "汇总.json").read_text(encoding="utf-8"))
     assert len(drones) == 3 and len(boxes) == 80 and len(legs) == 240
     assert len(caps) == len(details) == 45
     assert len({(r["服务区"], r["机型"]) for r in caps}) == 45
@@ -112,7 +112,7 @@ def main():
     if not math.isclose(sum(float(r["作业时间_s"]) for r in chosen), summary["operation_s"], abs_tol=1e-6):
         errors.append("汇总时间不一致")
     report = [f"状态: {'PASS' if not errors else 'FAIL'}", "输入: 原始无人机/逐箱xlsx、240条有向航段、问题一输出", f"载荷组合: {len(caps)}", f"候选组批: {len(candidates)}", f"最优架次: {len(chosen)}", f"货箱覆盖: {len(allocated)}/80", f"发现: {len(errors)}"] + errors[:100]
-    (OUT / "audit_report.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
+    (OUT / "独立审计报告.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
     print("\n".join(report[:7]))
     if errors:
         raise SystemExit(1)

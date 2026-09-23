@@ -368,19 +368,20 @@ def main():
         if np.isfinite(total_n):
             assert sum(len(r["货箱编号列表"].split(",")) for r in scenario_trips) == 80
             sensitivity_trips.extend(scenario_trips)
-    out = ROOT / "results"
-    write_csv(out / "Q1_安全载荷.csv", list(caps_rows[0]), caps_rows)
-    write_csv(out / "Q1_单点组批.csv", list(trips[0]), trips)
-    write_csv(out / "Q1_权衡.csv", list(alternatives[0]), alternatives)
-    write_csv(out / "Q1_余量敏感性.csv", list(sensitivity[0]), sensitivity)
-    write_csv(out / "Q1_余量组批.csv", list(sensitivity_trips[0]), sensitivity_trips)
+    out = ROOT / "results" / "历史结果_旧口径"
+    out.mkdir(parents=True, exist_ok=True)
+    write_csv(out / "最大安全载荷.csv", list(caps_rows[0]), caps_rows)
+    write_csv(out / "单点组批.csv", list(trips[0]), trips)
+    write_csv(out / "指标权衡.csv", list(alternatives[0]), alternatives)
+    write_csv(out / "返航余量敏感性.csv", list(sensitivity[0]), sensitivity)
+    write_csv(out / "返航余量组批.csv", list(sensitivity_trips[0]), sensitivity_trips)
     template = load_workbook(ROOT / "结果提交模板.xlsx")
     sheet = template["Q1_单点组批"]
     template_columns = [sheet.cell(1, j).value for j in range(1, 10)]
     for i, trip in enumerate(trips, 2):
         for j, key in enumerate(template_columns, 1):
             sheet.cell(i, j, trip[key])
-    template.save(out / "结果提交_仅第一问.xlsx")
+    template.save(out / "第一问_模板填写结果.xlsx")
     print(json.dumps({"trips": len(trips), "boxes": 80,
                       "energy_kwh": sum(t["架次能耗（kWh）"] for t in trips),
                       "operation_s": sum(t["作业时间（s）"] for t in trips),

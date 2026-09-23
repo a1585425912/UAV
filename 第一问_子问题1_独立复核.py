@@ -130,7 +130,7 @@ def main():
     args = parser.parse_args()
     hub, zones, models, dem, lat, lon = load_inputs()
     previous = {}
-    with (BASE / "results" / "Q1_安全载荷.csv").open(encoding="utf-8-sig", newline="") as f:
+    with (BASE / "results" / "历史结果_旧口径" / "最大安全载荷.csv").open(encoding="utf-8-sig", newline="") as f:
         for r in csv.DictReader(f):
             previous[(r["服务区编号"], r["机型编号"])] = float(r["最大安全载荷（kg）"])
     output = []
@@ -161,7 +161,7 @@ def main():
                            "WGS84边界残差（kWh）": residual_w})
     if not args.site:
         assert len(output) == 45
-        target = BASE / "results" / "Q1_子问题1_独立复核.csv"
+        target = BASE / "results" / "历史结果_旧口径" / "安全载荷独立复核.csv"
         with target.open("w", encoding="utf-8-sig", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(output[0]))
             writer.writeheader()

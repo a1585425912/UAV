@@ -42,10 +42,11 @@ def draw():
     drones, origin, sites, boxes = inputs()
     dem = load_dem()
     geos = {s: geometry(s, origin, site, dem) for s, site in sites.items()}
-    trips = pd.read_csv(ROOT / "results" / "Q1_单点组批.csv")
-    caps = pd.read_csv(ROOT / "results" / "Q1_安全载荷.csv")
-    sens = pd.read_csv(ROOT / "results" / "Q1_余量敏感性.csv")
-    alt = pd.read_csv(ROOT / "results" / "Q1_权衡.csv")
+    historical = ROOT / "results" / "历史结果_旧口径"
+    trips = pd.read_csv(historical / "单点组批.csv")
+    caps = pd.read_csv(historical / "最大安全载荷.csv")
+    sens = pd.read_csv(historical / "返航余量敏感性.csv")
+    alt = pd.read_csv(historical / "指标权衡.csv")
     names = list(sites)
     short = [s[-3:] for s in names]
     counts = pd.DataFrame([{ "服务区": s, "类型": b["type"], "质量": b["mass"], "体积": b["volume"]}
@@ -186,7 +187,7 @@ def draw():
 
     flow()
     pd.DataFrame(contracts, columns=["图文件前缀", "核心结论", "证据", "图型", "尺寸"]).to_csv(
-        ROOT / "results" / "Q1_图表契约.csv", index=False, encoding="utf-8-sig")
+        historical / "图表契约.csv", index=False, encoding="utf-8-sig")
 
 
 def flow():
