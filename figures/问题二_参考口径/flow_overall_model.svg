@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="453.2pt" height="453.2pt" viewBox="0 0 453.2 453.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-23T22:45:24.354762</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 453.2 
+L 453.2 453.2 
+L 453.2 0 
+L -0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 147.212 78.528 
+L 305.988 78.528 
+Q 314.908 78.528 314.908 69.608 
+L 314.908 33.482 
+Q 314.908 24.562 305.988 24.562 
+L 147.212 24.562 
+Q 138.292 24.562 138.292 33.482 
+L 138.292 69.608 
+Q 138.292 78.528 147.212 78.528 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #e3eee9; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 148.6392 146.32 
+L 311.34 146.32 
+L 304.5608 99.49 
+L 141.86 99.49 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #eff3f5; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 141.86 217.68 
+L 311.34 217.68 
+L 311.34 170.85 
+L 141.86 170.85 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #edf2f5; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 141.86 289.04 
+L 311.34 289.04 
+L 311.34 242.21 
+L 141.86 242.21 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #edf2f5; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 226.6 313.57 
+L 311.34 336.985 
+L 226.6 360.4 
+L 141.86 336.985 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #e8eef3; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 147.212 435.328 
+L 305.988 435.328 
+Q 314.908 435.328 314.908 426.408 
+L 314.908 390.282 
+Q 314.908 381.362 305.988 381.362 
+L 147.212 381.362 
+Q 138.292 381.362 138.292 390.282 
+L 138.292 426.408 
+Q 138.292 435.328 147.212 435.328 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #e3eee9; stroke: #536676; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 226.6 80.52814 
+Q 226.6 87.223492 226.6 92.80081 
+" clip-path="url(#pa6997015e3)" style="fill: none; stroke: #536676; stroke-linecap: round"/>
+    <path d="M 228.8 88.40081 
+L 226.6 92.80081 
+L 224.4 88.40081 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #536676; stroke: #536676; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 226.6 151.88814 
+Q 226.6 158.583492 226.6 164.16081 
+" clip-path="url(#pa6997015e3)" style="fill: none; stroke: #536676; stroke-linecap: round"/>
+    <path d="M 228.8 159.76081 
+L 226.6 164.16081 
+L 224.4 159.76081 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #536676; stroke: #536676; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 226.6 223.24814 
+Q 226.6 229.943492 226.6 235.52081 
+" clip-path="url(#pa6997015e3)" style="fill: none; stroke: #536676; stroke-linecap: round"/>
+    <path d="M 228.8 231.12081 
+L 226.6 235.52081 
+L 224.4 231.12081 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #536676; stroke: #536676; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 226.6 294.60814 
+Q 226.6 301.303492 226.6 306.88081 
+" clip-path="url(#pa6997015e3)" style="fill: none; stroke: #536676; stroke-linecap: round"/>
+    <path d="M 228.8 302.48081 
+L 226.6 306.88081 
+L 224.4 302.48081 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #536676; stroke: #536676; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 226.6 365.96814 
+Q 226.6 372.663492 226.6 378.24081 
+" clip-path="url(#pa6997015e3)" style="fill: none; stroke: #536676; stroke-linecap: round"/>
+    <path d="M 228.8 373.84081 
+L 226.6 378.24081 
+L 224.4 373.84081 
+z
+" clip-path="url(#pa6997015e3)" style="fill: #536676; stroke: #536676; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="53.748125" transform="rotate(-0 226.6 53.748125)">题目、80 箱与设备参数</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="125.108125" transform="rotate(-0 226.6 125.108125)">DEM 缓存与 240 航段几何</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="196.468125" transform="rotate(-0 226.6 196.468125)">问题一：安全载荷与单点组批</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="267.828125" transform="rotate(-0 226.6 267.828125)">问题二：多点路线与资源调度</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="339.188125" transform="rotate(-0 226.6 339.188125)">逐箱时限/能量/资源审计</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="226.6" y="410.548125" transform="rotate(-0 226.6 410.548125)">Q1/Q2 结果表与模板</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa6997015e3">
+   <rect x="3.6" y="3.6" width="446" height="446"/>
+  </clipPath>
+ </defs>
+</svg>
