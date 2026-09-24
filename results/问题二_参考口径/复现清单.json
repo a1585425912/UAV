@@ -59,5 +59,14 @@
     ],
     "hard_deadlines": "医疗期望时间与首批截止时间取较早者"
   },
-  "reproduce_command": "python 问题二_复现.py --iterations 8000 --seeds 0 1 2 3 4"
+  "reproduce_command": "python 问题二_复现.py --iterations 8000 --seeds 0 1 2 3 4",
+  "指纹更新记录": [
+    {
+      "文件": "D:\\git\\math_modeling\\UAV\\results\\问题一_非枚举整数规划\\结果提交_问题一主方案.xlsx",
+      "原记录": "fb29420875e9be126aea19e2d195b11f1a87996a5f4c0e4c3ca934bbf5a87128",
+      "处置": "t7 曾按 F-09 删除该工作簿的 5 张上游模板旧表，导致 问题二_独立审计.py:162 的『Q1 工作簿与问题二工作簿原工作表一致』断言失败（KeyError: Q3_中继架次）；已按 HEAD 版本字节级还原（SHA-256 与修复前一致），F-09 改走『文档标注 + 提交声明』路径",
+      "当前值": "fb29420875e9be126aea19e2d195b11f1a87996a5f4c0e4c3ca934bbf5a87128",
+      "依据": "t7 05_提交物修复清单.md §2"
+    }
+  ]
 }

@@ -127,6 +127,6 @@
     "minimum_shortfall": 2,
     "minimum_resources_given_shortfall": 30,
     "binary_components": 7,
-    "constraint_rows": 373
+    "constraint_rows": 379
   }
 }

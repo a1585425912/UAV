@@ -64,7 +64,7 @@ def verify_q3(stem, source):
     deliveries = read(Q3 / f"{stem}_逐箱交付.csv")
     relays = read(Q3 / f"{stem}_中继架次.csv")
     comm = read(Q3 / f"{stem}_通信保障.csv")
-    assert len(trips) == 22 and len(deliveries) == 80 and len(relays) == 3
+    assert len(trips) == 22 and len(deliveries) == 80 and len(relays) == 4
     assert {r["货箱编号"] for r in deliveries} == set(boxes)
     by_trip = defaultdict(list)
     for d in deliveries:
@@ -212,7 +212,7 @@ def verify_q3(stem, source):
     close(metrics["energy_kwh"], relay_energy + transport_energy, "总能耗")
     close(metrics["makespan_s"], max([float(t["返回O01时刻_s"]) for t in trips]
                                     + [float(r["返回O01时刻_s"]) for r in relays]), "联合完成")
-    assert metrics["transport_sorties"] == 22 and metrics["relay_sorties"] == 3
+    assert metrics["transport_sorties"] == 22 and metrics["relay_sorties"] == 4
     assert metrics["boxes"] == 80 and metrics["hard_excess_s"] == 0
     assert metrics["weighted_tardiness"] == 0 and metrics["communication_gap_s"] == 0
     return full
@@ -282,7 +282,7 @@ def verify_template():
 
     for sheet, csv_file, expected, count in (("Q2_运输架次", "主方案_运输架次.csv", 22, 8),
                                              ("Q2_逐箱交付", "主方案_逐箱交付.csv", 80, 4),
-                                             ("Q3_中继架次", "主方案_中继架次.csv", 3, 11),
+                                             ("Q3_中继架次", "主方案_中继架次.csv", 4, 11),
                                              ("Q3_通信保障", "主方案_通信保障.csv", None, 6)):
         rows = read(Q3 / csv_file)
         assert book[sheet].max_row == len(rows) + 1
