@@ -2,29 +2,30 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 from utils.plot_style import choose_font
+from plot_q1_rated_soc import main as plot_rated_soc
 
 ROOT = Path(__file__).resolve().parent
 TARGET = ROOT / "figures" / "问题一_非枚举整数规划"
 RESULT = ROOT / "results" / "问题一_非枚举整数规划"
-sys.path.insert(0, str(Path.home() / ".codex" / "skills" / "math-modeling" / "tools" / "figure" / "scripts"))
-from export_figure import export_figure
-
 plt.rcParams.update({"font.family": choose_font("zh"), "font.size": 8,
                      "svg.fonttype": "none", "axes.spines.top": False,
                      "axes.spines.right": False, "axes.unicode_minus": False})
 
 
 def save(fig, name, size=(7.2, 4.2)):
+    fig.set_size_inches(*size)
     fig.tight_layout()
-    export_figure(fig, str(TARGET / name), formats=["svg", "png"],
-                  size_inches=size, dpi=300, grayscale_preview=False, tight=False)
+    svg = TARGET / f"{name}.svg"
+    fig.savefig(svg, metadata={"Date": None})
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text(encoding="utf-8").splitlines()) + "\n",
+                   encoding="utf-8")
+    fig.savefig(TARGET / f"{name}.png", dpi=300)
     plt.close(fig)
 
 
@@ -53,7 +54,8 @@ def flow(name, labels, loop_from, loop_to):
 
 def main():
     TARGET.mkdir(parents=True, exist_ok=True)
-    # 数据图随当前结果提交；只重绘直接指派的求解过程与流程图。
+    plot_rated_soc()
+    # 其余数据图随当前结果提交；下文只重绘直接指派的求解过程与流程图。
     shared = ("raw_q1_distance_terrain", "raw_q1_range_payload", "raw_q1_box_count",
               "process_q1_energy_boundary", "process_q1_rated_soc",
               "result_q1_safe_payload", "result_q1_trips_by_area", "result_q1_trip_soc")
