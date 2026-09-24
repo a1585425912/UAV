@@ -1906,7 +1906,7 @@ def part_F():
     RESULT["核验条目"].append({
         "id": "Q2-16", "主张": "问题二共 11 类图（原始 3、过程 3、结果 4、流程 2）",
         "结论": "反驳" if (rows_n != 11 or len(figs) != 11) else "确认",
-        "证据": f"图表契约表格行数 {rows_n}、figures/问题二_参考口径 目录前缀数 {len(figs)}（{sorted(figs)}，每类含 PNG+SVG）；"
+        "证据": f"图表契约表格行数 {rows_n}、figures/问题二_参考口径 目录前缀数 {len(figs)}（{sorted(figs)}，每类含 PNG）；"
                 f"3+3+4+2=12 -> 主张文本的『11 类』与产物及其自身列举不符，产物本身为 12 类且每类 2 个文件"})
     status = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"],
                             capture_output=True, text=True, encoding="utf-8").stdout.splitlines()

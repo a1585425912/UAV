@@ -6,3 +6,6 @@ Thumbs.db
 数据/
 figures/*_grayscale.png
 results/figure_previews/
+
+# 图件只保留 PNG（SVG 已按需求从仓库移除，重绘时不再入库）
+*.svg

@@ -62,9 +62,8 @@ def main():
               "process_q1_energy_boundary", "process_q1_rated_soc",
               "result_q1_safe_payload", "result_q1_trips_by_area", "result_q1_trip_soc")
     for stem in shared:
-        for suffix in (".svg", ".png"):
-            if not (TARGET / (stem + suffix)).exists():
-                raise FileNotFoundError(f"当前版本的数据图缺失：{stem + suffix}")
+        if not (TARGET / (stem + ".png")).exists():
+            raise FileNotFoundError(f"当前版本的数据图缺失：{stem}.png")
     summary = json.loads((RESULT / "汇总.json").read_text(encoding="utf-8"))
     areas = sorted(summary["分区求解"])
     calls = [summary["分区求解"][area]["MILP调用次数"] for area in areas]
