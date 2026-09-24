@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="452.2pt" height="336.433125pt" viewBox="0 0 452.2 336.433125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-24T10:51:14.924719</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 336.433125
+L 452.2 336.433125
+L 452.2 0
+L -0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 80.14 84.874725
+L 372.06 84.874725
+Q 375.62 84.874725 375.62 81.281125
+L 375.62 45.345125
+Q 375.62 41.751525 372.06 41.751525
+L 80.14 41.751525
+Q 76.58 41.751525 76.58 45.345125
+L 76.58 81.281125
+Q 76.58 84.874725 80.14 84.874725
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #eaf2f7; stroke: #60788b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 226.1 85.526153
+Q 226.1 89.814658 226.1 92.98513
+" clip-path="url(#p7ef44ea6c9)" style="fill: none; stroke: #60788b; stroke-linecap: round"/>
+    <path d="M 228.7 87.78513
+L 226.1 92.98513
+L 223.5 87.78513
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #60788b; stroke: #60788b; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 80.14 138.778725
+L 372.06 138.778725
+Q 375.62 138.778725 375.62 135.185125
+L 375.62 99.249125
+Q 375.62 95.655525 372.06 95.655525
+L 80.14 95.655525
+Q 76.58 95.655525 76.58 99.249125
+L 76.58 135.185125
+Q 76.58 138.778725 80.14 138.778725
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #eaf2f7; stroke: #60788b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 226.1 139.430153
+Q 226.1 143.718658 226.1 146.88913
+" clip-path="url(#p7ef44ea6c9)" style="fill: none; stroke: #60788b; stroke-linecap: round"/>
+    <path d="M 228.7 141.68913
+L 226.1 146.88913
+L 223.5 141.68913
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #60788b; stroke: #60788b; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 80.14 192.682725
+L 372.06 192.682725
+Q 375.62 192.682725 375.62 189.089125
+L 375.62 153.153125
+Q 375.62 149.559525 372.06 149.559525
+L 80.14 149.559525
+Q 76.58 149.559525 76.58 153.153125
+L 76.58 189.089125
+Q 76.58 192.682725 80.14 192.682725
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #eaf2f7; stroke: #60788b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 226.1 193.334153
+Q 226.1 197.622658 226.1 200.79313
+" clip-path="url(#p7ef44ea6c9)" style="fill: none; stroke: #60788b; stroke-linecap: round"/>
+    <path d="M 228.7 195.59313
+L 226.1 200.79313
+L 223.5 195.59313
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #60788b; stroke: #60788b; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 80.14 246.586725
+L 372.06 246.586725
+Q 375.62 246.586725 375.62 242.993125
+L 375.62 207.057125
+Q 375.62 203.463525 372.06 203.463525
+L 80.14 203.463525
+Q 76.58 203.463525 76.58 207.057125
+L 76.58 242.993125
+Q 76.58 246.586725 80.14 246.586725
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #eaf2f7; stroke: #60788b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 226.1 247.238153
+Q 226.1 251.526658 226.1 254.69713
+" clip-path="url(#p7ef44ea6c9)" style="fill: none; stroke: #60788b; stroke-linecap: round"/>
+    <path d="M 228.7 249.49713
+L 226.1 254.69713
+L 223.5 249.49713
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #60788b; stroke: #60788b; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 80.14 300.490725
+L 372.06 300.490725
+Q 375.62 300.490725 375.62 296.897125
+L 375.62 260.961125
+Q 375.62 257.367525 372.06 257.367525
+L 80.14 257.367525
+Q 76.58 257.367525 76.58 260.961125
+L 76.58 296.897125
+Q 76.58 300.490725 80.14 300.490725
+z
+" clip-path="url(#p7ef44ea6c9)" style="fill: #eaf2f7; stroke: #60788b; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="65.791641" transform="rotate(-0 226.1 65.791641)">读入问题三全部运输与中继架次</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="119.695641" transform="rotate(-0 226.1 119.695641)">同一架次服务区并入连通单元</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="173.599641" transform="rotate(-0 226.1 173.599641)">区间峰值形成资源约束</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="227.503641" transform="rotate(-0 226.1 227.503641)">先缺口、再规模、后 CV 的 MILP</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="281.407641" transform="rotate(-0 226.1 281.407641)">独立复算与 K=2/3 方案导出</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'Microsoft YaHei'; text-anchor: middle" x="226.1" y="12.393125" transform="rotate(-0 226.1 12.393125)">问题四分区求解</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7ef44ea6c9">
+   <rect x="3.6" y="18.393125" width="445" height="314.44"/>
+  </clipPath>
+ </defs>
+</svg>
