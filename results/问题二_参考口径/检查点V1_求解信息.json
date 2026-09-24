@@ -1,6 +1,0 @@
-{
-  "milp_iterations": 1,
-  "variables": 216,
-  "cuts": 90,
-  "mip_gap": 0.0
-}
