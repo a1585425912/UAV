@@ -1,0 +1,5085 @@
+[
+ {
+  "序号": 1,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 5903.038154612774,
+   "energy_kwh": 65.89095992013699,
+   "sorties": 24,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-WAT-01",
+       "S013-MED-01",
+       "S013-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-HYG-01",
+       "S006-WAT-01",
+       "S006-MED-01",
+       "S006-FOD-01",
+       "S006-WAT-03",
+       "S006-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-05",
+       "S001-WAT-07",
+       "S001-HYG-02",
+       "S001-HYG-01",
+       "S001-WAT-04",
+       "S001-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-02",
+       "S001-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-02",
+       "S002-WAT-03",
+       "S002-HYG-01",
+       "S002-WAT-01",
+       "S002-FOD-01",
+       "S002-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-01",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-FOD-01",
+       "S010-MED-01",
+       "S010-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06",
+       "S001-MED-01",
+       "S001-MED-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-WAT-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-FOD-02",
+       "S003-WAT-02",
+       "S003-WAT-04",
+       "S003-FOD-01",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-02",
+       "S002-MED-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-HYG-01",
+       "S004-MED-01",
+       "S004-WAT-01",
+       "S004-WAT-03",
+       "S004-FOD-01",
+       "S004-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-01",
+       "S005-WAT-02",
+       "S005-WAT-03",
+       "S005-MED-01",
+       "S005-HYG-01",
+       "S005-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01",
+       "S001-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01",
+       "S012-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-02",
+       "S008-MED-01",
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-MED-01"
+      ]
+     },
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-MED-01",
+       "S011-WAT-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 2,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 5969.038154612774,
+   "energy_kwh": 67.98358039373178,
+   "sorties": 23,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07",
+       "S001-MED-02",
+       "S001-WAT-06",
+       "S001-WAT-04",
+       "S001-HYG-01",
+       "S001-WAT-03",
+       "S001-FOD-02",
+       "S001-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-WAT-01",
+       "S013-MED-01",
+       "S013-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-FOD-01",
+       "S014-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-WAT-05",
+       "S001-FOD-01",
+       "S001-WAT-08",
+       "S001-WAT-01",
+       "S001-WAT-02",
+       "S001-HYG-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-01",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-FOD-01",
+       "S010-WAT-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-WAT-01",
+       "S009-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-MED-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-FOD-01",
+       "S007-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-HYG-01",
+       "S002-WAT-04",
+       "S002-FOD-01",
+       "S002-WAT-02",
+       "S002-WAT-01",
+       "S002-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-MED-01",
+       "S006-WAT-01",
+       "S006-WAT-02",
+       "S006-HYG-01",
+       "S006-WAT-03",
+       "S006-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-03"
+      ]
+     },
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-WAT-01",
+       "S015-FOD-01",
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-WAT-01",
+       "S011-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-MED-01",
+       "S003-WAT-01",
+       "S003-WAT-02",
+       "S003-FOD-02",
+       "S003-WAT-04",
+       "S003-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-01",
+       "S005-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-HYG-01",
+       "S004-MED-01",
+       "S004-WAT-03",
+       "S004-WAT-02",
+       "S004-FOD-01",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 3,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 6104.072811690206,
+   "energy_kwh": 66.73135134566041,
+   "sorties": 23,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     },
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-03",
+       "S006-WAT-01",
+       "S006-HYG-01",
+       "S006-FOD-01",
+       "S006-MED-01",
+       "S006-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-02",
+       "S001-HYG-02",
+       "S001-WAT-05",
+       "S001-FOD-03",
+       "S001-WAT-03",
+       "S001-HYG-01",
+       "S001-WAT-06"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-04",
+       "S001-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-01",
+       "S002-WAT-01",
+       "S002-WAT-02",
+       "S002-FOD-02",
+       "S002-WAT-04",
+       "S002-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-MED-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-FOD-01",
+       "S014-WAT-01",
+       "S014-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-WAT-01",
+       "S009-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07"
+      ]
+     },
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02",
+       "S005-MED-01",
+       "S005-HYG-01",
+       "S005-WAT-01",
+       "S005-WAT-03",
+       "S005-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-01",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01",
+       "S001-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-02",
+       "S003-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-WAT-04",
+       "S003-WAT-02",
+       "S003-WAT-01",
+       "S003-WAT-03",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-MED-01",
+       "S004-WAT-03",
+       "S004-FOD-01",
+       "S004-HYG-01",
+       "S004-WAT-02",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-MED-01",
+       "S011-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 4,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 6132.336810809119,
+   "energy_kwh": 64.6745488586191,
+   "sorties": 23,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     },
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-HYG-01",
+       "S006-WAT-02",
+       "S006-WAT-03",
+       "S006-WAT-01",
+       "S006-MED-01",
+       "S006-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-HYG-02",
+       "S001-WAT-01",
+       "S001-WAT-03",
+       "S001-WAT-05",
+       "S001-HYG-01",
+       "S001-WAT-06"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07",
+       "S001-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-02",
+       "S001-MED-01",
+       "S001-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-MED-01",
+       "S002-WAT-04"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-04",
+       "S001-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-03",
+       "S003-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-WAT-01",
+       "S002-WAT-02",
+       "S002-HYG-01",
+       "S002-FOD-02",
+       "S002-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-FOD-01",
+       "S005-WAT-01",
+       "S005-MED-01",
+       "S005-WAT-02",
+       "S005-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-MED-01",
+       "S003-WAT-04",
+       "S003-HYG-01",
+       "S003-WAT-01",
+       "S003-WAT-02",
+       "S003-FOD-01"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-WAT-01",
+       "S010-FOD-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-FOD-01",
+       "S014-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-01",
+       "S004-HYG-01",
+       "S004-FOD-01",
+       "S004-MED-01",
+       "S004-WAT-03",
+       "S004-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-WAT-02",
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 5,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 6361.573880477822,
+   "energy_kwh": 66.69863869786914,
+   "sorties": 22,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-03",
+       "S006-WAT-01",
+       "S006-HYG-01",
+       "S006-FOD-01",
+       "S006-WAT-02",
+       "S006-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-04",
+       "S001-WAT-06",
+       "S001-HYG-01",
+       "S001-WAT-02",
+       "S001-FOD-02",
+       "S001-FOD-01",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-01",
+       "S002-WAT-04",
+       "S002-HYG-01",
+       "S002-WAT-02",
+       "S002-MED-01",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-FOD-01",
+       "S014-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-WAT-05"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-FOD-01",
+       "S013-MED-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07",
+       "S001-MED-02",
+       "S001-HYG-02",
+       "S001-WAT-03",
+       "S001-MED-01"
+      ]
+     },
+     {
+      "area": "S004",
+      "ids": [
+       "S004-HYG-01",
+       "S004-WAT-01",
+       "S004-MED-01",
+       "S004-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-MED-01",
+       "S003-WAT-04",
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-02",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-03",
+       "S004-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01",
+       "S012-WAT-01"
+      ]
+     },
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-01",
+       "S008-MED-01",
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-FOD-01",
+       "S005-WAT-01",
+       "S005-MED-01",
+       "S005-WAT-02",
+       "S005-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-WAT-01",
+       "S015-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-01",
+       "S003-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 6,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 6587.5155113126975,
+   "energy_kwh": 66.5771549871742,
+   "sorties": 22,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01",
+       "S007-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02"
+      ]
+     },
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-HYG-01",
+       "S006-MED-01",
+       "S006-WAT-01",
+       "S006-WAT-03",
+       "S006-FOD-01",
+       "S006-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01",
+       "S001-WAT-03",
+       "S001-WAT-07",
+       "S001-WAT-05",
+       "S001-FOD-02",
+       "S001-FOD-01",
+       "S001-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-08",
+       "S001-WAT-04",
+       "S001-MED-02",
+       "S001-MED-01"
+      ]
+     },
+     {
+      "area": "S004",
+      "ids": [
+       "S004-MED-01",
+       "S004-WAT-02",
+       "S004-WAT-01",
+       "S004-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-02",
+       "S001-WAT-06"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-02",
+       "S003-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-HYG-01",
+       "S002-WAT-01",
+       "S002-FOD-01",
+       "S002-WAT-04",
+       "S002-FOD-02",
+       "S002-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-02"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01",
+       "S012-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-WAT-01",
+       "S010-FOD-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-FOD-01",
+       "S004-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-MED-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-FOD-01",
+       "S003-WAT-04",
+       "S003-WAT-03",
+       "S003-WAT-01",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-HYG-02"
+      ]
+     },
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-MED-01",
+       "S005-WAT-01",
+       "S005-FOD-01",
+       "S005-WAT-02",
+       "S005-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-01",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-WAT-02",
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-WAT-01",
+       "S015-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 7,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7198.614682868083,
+   "energy_kwh": 65.43187368135149,
+   "sorties": 22,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01",
+       "S012-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-01",
+       "S006-WAT-03",
+       "S006-FOD-01",
+       "S006-HYG-01",
+       "S006-WAT-02",
+       "S006-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-03",
+       "S001-WAT-05"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-FOD-01",
+       "S010-WAT-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-FOD-01",
+       "S013-MED-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-04",
+       "S002-WAT-03",
+       "S002-FOD-02",
+       "S002-WAT-02",
+       "S002-FOD-01",
+       "S002-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-01",
+       "S001-FOD-03",
+       "S001-WAT-08",
+       "S001-WAT-07",
+       "S001-MED-02",
+       "S001-WAT-06",
+       "S001-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-FOD-01",
+       "S014-MED-01",
+       "S014-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01",
+       "S001-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-HYG-02",
+       "S001-WAT-02",
+       "S001-HYG-01",
+       "S001-FOD-02"
+      ]
+     },
+     {
+      "area": "S004",
+      "ids": [
+       "S004-HYG-01",
+       "S004-WAT-02",
+       "S004-MED-01",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-02",
+       "S008-WAT-01",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-MED-01",
+       "S002-WAT-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-WAT-01",
+       "S009-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-03",
+       "S003-FOD-01",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-03",
+       "S004-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-04",
+       "S003-WAT-02",
+       "S003-WAT-01",
+       "S003-HYG-01",
+       "S003-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-MED-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-FOD-01",
+       "S005-MED-01",
+       "S005-WAT-03",
+       "S005-WAT-02",
+       "S005-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-WAT-01",
+       "S011-MED-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 8,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7210.10805251037,
+   "energy_kwh": 63.590555261053844,
+   "sorties": 22,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-03",
+       "S001-FOD-03",
+       "S001-WAT-02",
+       "S001-MED-02",
+       "S001-WAT-01",
+       "S001-HYG-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-01",
+       "S001-WAT-05"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-FOD-01",
+       "S014-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-HYG-01",
+       "S002-WAT-03",
+       "S002-WAT-02",
+       "S002-FOD-02",
+       "S002-FOD-01",
+       "S002-WAT-01",
+       "S002-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07",
+       "S001-WAT-04",
+       "S001-FOD-02",
+       "S001-FOD-01",
+       "S001-HYG-01",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-04"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01",
+       "S015-WAT-01",
+       "S015-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-03",
+       "S006-WAT-02",
+       "S006-MED-01",
+       "S006-HYG-01",
+       "S006-WAT-01",
+       "S006-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02",
+       "S005-MED-01",
+       "S005-HYG-01",
+       "S005-WAT-03",
+       "S005-WAT-01",
+       "S005-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-02",
+       "S003-FOD-01",
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-HYG-01",
+       "S003-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-MED-01",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-MED-01",
+       "S004-FOD-01",
+       "S004-WAT-02",
+       "S004-WAT-03",
+       "S004-HYG-01",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 9,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7233.970162268761,
+   "energy_kwh": 63.3777188802196,
+   "sorties": 21,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-MED-01",
+       "S002-WAT-04",
+       "S002-WAT-01",
+       "S002-FOD-01",
+       "S002-WAT-02",
+       "S002-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-02",
+       "S002-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06",
+       "S001-HYG-02",
+       "S001-WAT-04",
+       "S001-WAT-01",
+       "S001-FOD-03",
+       "S001-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-MED-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-WAT-01",
+       "S015-FOD-01",
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-FOD-01",
+       "S006-WAT-01",
+       "S006-WAT-02",
+       "S006-HYG-01",
+       "S006-MED-01",
+       "S006-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-01",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-02",
+       "S001-WAT-02",
+       "S001-WAT-07",
+       "S001-HYG-01",
+       "S001-WAT-08",
+       "S001-WAT-03",
+       "S001-MED-01",
+       "S001-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-02",
+       "S008-FOD-01",
+       "S008-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-05"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-FOD-01",
+       "S009-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-03",
+       "S004-FOD-01",
+       "S004-HYG-01",
+       "S004-WAT-02",
+       "S004-WAT-01",
+       "S004-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-WAT-03",
+       "S003-WAT-02",
+       "S003-HYG-01",
+       "S003-MED-01",
+       "S003-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-04",
+       "S003-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-WAT-01",
+       "S011-MED-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-03",
+       "S005-FOD-01",
+       "S005-WAT-02",
+       "S005-HYG-01",
+       "S005-MED-01",
+       "S005-WAT-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 10,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7276.756131651626,
+   "energy_kwh": 62.67257389670212,
+   "sorties": 21,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-WAT-01",
+       "S009-MED-01",
+       "S009-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-02",
+       "S006-FOD-01",
+       "S006-HYG-01",
+       "S006-WAT-01",
+       "S006-WAT-03",
+       "S006-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-HYG-01",
+       "S002-FOD-02",
+       "S002-FOD-01",
+       "S002-MED-01",
+       "S002-WAT-03",
+       "S002-WAT-02",
+       "S002-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-04",
+       "S001-WAT-08",
+       "S001-FOD-01",
+       "S001-MED-02",
+       "S001-WAT-01",
+       "S001-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-05"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06",
+       "S001-HYG-01",
+       "S001-WAT-03",
+       "S001-HYG-02",
+       "S001-WAT-07",
+       "S001-FOD-03",
+       "S001-MED-01",
+       "S001-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-FOD-01",
+       "S014-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-FOD-01",
+       "S005-WAT-03",
+       "S005-HYG-01",
+       "S005-WAT-02",
+       "S005-WAT-01",
+       "S005-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-FOD-01",
+       "S010-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-02",
+       "S003-HYG-01",
+       "S003-WAT-02",
+       "S003-MED-01",
+       "S003-WAT-04",
+       "S003-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-01",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-04"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01",
+       "S015-WAT-01",
+       "S015-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-FOD-01",
+       "S004-WAT-01",
+       "S004-MED-01",
+       "S004-WAT-03",
+       "S004-WAT-02",
+       "S004-HYG-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 11,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7299.970162268759,
+   "energy_kwh": 61.709747853750436,
+   "sorties": 20,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-WAT-01",
+       "S013-MED-01",
+       "S013-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-04",
+       "S002-MED-01"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-03",
+       "S006-FOD-01",
+       "S006-WAT-02",
+       "S006-MED-01",
+       "S006-HYG-01",
+       "S006-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-FOD-01",
+       "S014-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-03",
+       "S001-FOD-03",
+       "S001-WAT-02",
+       "S001-MED-02",
+       "S001-WAT-01",
+       "S001-FOD-01",
+       "S001-MED-01",
+       "S001-WAT-08"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-07",
+       "S001-WAT-04",
+       "S001-FOD-02",
+       "S001-WAT-06",
+       "S001-HYG-01",
+       "S001-HYG-02",
+       "S001-WAT-05"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01",
+       "S015-WAT-01",
+       "S015-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-FOD-01",
+       "S003-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-HYG-01",
+       "S002-WAT-01",
+       "S002-WAT-03",
+       "S002-WAT-02",
+       "S002-FOD-02",
+       "S002-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02",
+       "S005-MED-01",
+       "S005-HYG-01",
+       "S005-WAT-03",
+       "S005-WAT-01",
+       "S005-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-WAT-01",
+       "S011-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-02",
+       "S003-MED-01",
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-HYG-01",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-MED-01",
+       "S004-FOD-01",
+       "S004-WAT-02",
+       "S004-WAT-03",
+       "S004-HYG-01",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 12,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7652.695593078914,
+   "energy_kwh": 62.3038319566251,
+   "sorties": 19,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-FOD-01",
+       "S014-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-HYG-01",
+       "S002-WAT-02",
+       "S002-FOD-01",
+       "S002-WAT-01",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06",
+       "S001-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-HYG-01",
+       "S006-WAT-02",
+       "S006-FOD-01",
+       "S006-WAT-01",
+       "S006-WAT-03",
+       "S006-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-FOD-01",
+       "S010-WAT-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-WAT-01",
+       "S013-MED-01",
+       "S013-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-02",
+       "S001-FOD-01",
+       "S001-HYG-02",
+       "S001-WAT-05",
+       "S001-WAT-07",
+       "S001-WAT-02",
+       "S001-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-HYG-01",
+       "S001-MED-01",
+       "S001-WAT-08",
+       "S001-MED-02",
+       "S001-WAT-01",
+       "S001-FOD-03"
+      ]
+     },
+     {
+      "area": "S004",
+      "ids": [
+       "S004-FOD-01",
+       "S004-HYG-01",
+       "S004-MED-01",
+       "S004-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01",
+       "S012-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-FOD-01",
+       "S005-MED-01",
+       "S005-WAT-01",
+       "S005-WAT-03",
+       "S005-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-FOD-01",
+       "S009-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-MED-01",
+       "S011-FOD-01",
+       "S011-WAT-01"
+      ]
+     },
+     {
+      "area": "S008",
+      "ids": [
+       "S008-HYG-01",
+       "S008-WAT-01",
+       "S008-FOD-01",
+       "S008-MED-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-WAT-01",
+       "S015-FOD-01",
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-02",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-02",
+       "S003-HYG-01",
+       "S003-FOD-01",
+       "S003-WAT-04",
+       "S003-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-MED-01",
+       "S002-WAT-04"
+      ]
+     },
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-MED-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 13,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7656.159638363681,
+   "energy_kwh": 60.50108417682758,
+   "sorties": 20,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-FOD-01",
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-FOD-01",
+       "S013-MED-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-03",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-02",
+       "S001-WAT-03",
+       "S001-WAT-08",
+       "S001-WAT-01",
+       "S001-WAT-05",
+       "S001-MED-01",
+       "S001-MED-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-HYG-01",
+       "S006-WAT-03",
+       "S006-WAT-01",
+       "S006-WAT-02",
+       "S006-MED-01",
+       "S006-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-WAT-01",
+       "S010-FOD-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-MED-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-03",
+       "S001-WAT-07",
+       "S001-FOD-01",
+       "S001-WAT-04",
+       "S001-HYG-01",
+       "S001-WAT-06",
+       "S001-HYG-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-02"
+      ]
+     },
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-01",
+       "S002-WAT-04",
+       "S002-WAT-02",
+       "S002-WAT-01",
+       "S002-HYG-01",
+       "S002-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-FOD-01",
+       "S009-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-02",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-WAT-01",
+       "S015-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-FOD-01",
+       "S007-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-MED-01",
+       "S005-WAT-01",
+       "S005-WAT-02",
+       "S005-FOD-01",
+       "S005-WAT-03",
+       "S005-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-MED-01",
+       "S003-WAT-02",
+       "S003-WAT-04",
+       "S003-WAT-03",
+       "S003-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-FOD-01",
+       "S008-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-HYG-01",
+       "S004-WAT-03",
+       "S004-FOD-01",
+       "S004-MED-01",
+       "S004-WAT-02",
+       "S004-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-MED-01",
+       "S011-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-02"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 14,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 7846.228679138148,
+   "energy_kwh": 60.02409497594646,
+   "sorties": 19,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-FOD-01",
+       "S013-WAT-01",
+       "S013-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-FOD-01",
+       "S014-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-01",
+       "S002-FOD-01",
+       "S002-HYG-01",
+       "S002-MED-01",
+       "S002-WAT-03",
+       "S002-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-03",
+       "S001-MED-01",
+       "S001-WAT-08",
+       "S001-WAT-04",
+       "S001-FOD-02",
+       "S001-WAT-05",
+       "S001-HYG-02",
+       "S001-MED-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-03",
+       "S003-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-FOD-01",
+       "S010-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-WAT-01",
+       "S006-HYG-01",
+       "S006-MED-01",
+       "S006-WAT-02"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-02",
+       "S007-WAT-01",
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-HYG-01",
+       "S001-WAT-07",
+       "S001-WAT-06",
+       "S001-FOD-01",
+       "S001-FOD-03",
+       "S001-WAT-02",
+       "S001-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-MED-01",
+       "S012-WAT-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-MED-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-WAT-01",
+       "S008-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02",
+       "S005-WAT-03",
+       "S005-MED-01",
+       "S005-FOD-01",
+       "S005-HYG-01",
+       "S005-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01",
+       "S009-FOD-01",
+       "S009-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-FOD-01"
+      ]
+     },
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-02",
+       "S003-WAT-01",
+       "S003-MED-01",
+       "S003-WAT-04",
+       "S003-FOD-01",
+       "S003-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-FOD-01",
+       "S006-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-02",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-FOD-01",
+       "S004-MED-01",
+       "S004-WAT-02",
+       "S004-WAT-01",
+       "S004-HYG-01",
+       "S004-WAT-03"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S008",
+      "ids": [
+       "S008-WAT-02",
+       "S008-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-WAT-01",
+       "S011-MED-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 15,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 8171.565447127903,
+   "energy_kwh": 60.44180693383757,
+   "sorties": 18,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-MED-01",
+       "S006-HYG-01",
+       "S006-WAT-02",
+       "S006-WAT-03",
+       "S006-FOD-01",
+       "S006-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-FOD-01",
+       "S012-WAT-01",
+       "S012-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-FOD-02",
+       "S001-WAT-02",
+       "S001-FOD-01",
+       "S001-WAT-03",
+       "S001-WAT-05",
+       "S001-MED-01",
+       "S001-WAT-06"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-WAT-01",
+       "S002-WAT-04",
+       "S002-WAT-03",
+       "S002-HYG-01",
+       "S002-WAT-02",
+       "S002-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-01",
+       "S001-WAT-04",
+       "S001-WAT-08",
+       "S001-HYG-01",
+       "S001-WAT-07",
+       "S001-HYG-02",
+       "S001-FOD-03",
+       "S001-MED-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-01",
+       "S004-HYG-01",
+       "S004-WAT-02",
+       "S004-FOD-01",
+       "S004-WAT-03",
+       "S004-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-MED-01",
+       "S014-WAT-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-MED-01",
+       "S013-FOD-01",
+       "S013-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-MED-01",
+       "S010-WAT-01",
+       "S010-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-01",
+       "S002-FOD-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-WAT-01",
+       "S011-MED-01"
+      ]
+     },
+     {
+      "area": "S008",
+      "ids": [
+       "S008-FOD-01",
+       "S008-WAT-01",
+       "S008-MED-01",
+       "S008-HYG-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-02",
+       "S003-WAT-03",
+       "S003-WAT-04",
+       "S003-HYG-01",
+       "S003-FOD-01"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-MED-01",
+       "S007-WAT-01"
+      ]
+     },
+     {
+      "area": "S005",
+      "ids": [
+       "S005-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-WAT-02",
+       "S005-FOD-01",
+       "S005-WAT-03",
+       "S005-HYG-01",
+       "S005-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-FOD-01",
+       "S009-WAT-01",
+       "S009-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-FOD-01",
+       "S015-WAT-01",
+       "S015-MED-01"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "序号": 16,
+  "metrics": {
+   "hard_excess_s": 0.0,
+   "weighted_tardiness": 0.0,
+   "makespan_s": 8237.565447127903,
+   "energy_kwh": 59.4658115950177,
+   "sorties": 18,
+   "boxes": 80
+  },
+  "specs": [
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-MED-02",
+       "S001-FOD-03",
+       "S001-WAT-05",
+       "S001-WAT-08",
+       "S001-MED-01",
+       "S001-WAT-01",
+       "S001-WAT-07",
+       "S001-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S014",
+      "ids": [
+       "S014-WAT-01",
+       "S014-MED-01",
+       "S014-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S010",
+      "ids": [
+       "S010-WAT-01",
+       "S010-FOD-01",
+       "S010-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S013",
+      "ids": [
+       "S013-WAT-01",
+       "S013-MED-01",
+       "S013-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S001",
+      "ids": [
+       "S001-WAT-06",
+       "S001-FOD-01",
+       "S001-WAT-02",
+       "S001-HYG-02",
+       "S001-FOD-02",
+       "S001-WAT-03",
+       "S001-WAT-04"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S012",
+      "ids": [
+       "S012-WAT-01",
+       "S012-MED-01",
+       "S012-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-MED-01"
+      ]
+     },
+     {
+      "area": "S002",
+      "ids": [
+       "S002-FOD-02",
+       "S002-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S009",
+      "ids": [
+       "S009-WAT-01",
+       "S009-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-01",
+       "S007-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S002",
+      "ids": [
+       "S002-MED-01",
+       "S002-WAT-04",
+       "S002-HYG-01",
+       "S002-WAT-01",
+       "S002-WAT-03",
+       "S002-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S006",
+      "ids": [
+       "S006-MED-01",
+       "S006-WAT-01",
+       "S006-FOD-01",
+       "S006-WAT-02",
+       "S006-WAT-03",
+       "S006-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S004",
+      "ids": [
+       "S004-WAT-02",
+       "S004-HYG-01",
+       "S004-WAT-01",
+       "S004-WAT-03",
+       "S004-MED-01",
+       "S004-FOD-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S011",
+      "ids": [
+       "S011-FOD-01",
+       "S011-WAT-01",
+       "S011-MED-01"
+      ]
+     },
+     {
+      "area": "S008",
+      "ids": [
+       "S008-MED-01",
+       "S008-HYG-01",
+       "S008-FOD-01",
+       "S008-WAT-01",
+       "S008-WAT-02"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S015",
+      "ids": [
+       "S015-MED-01",
+       "S015-FOD-01",
+       "S015-WAT-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "B",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-WAT-01",
+       "S003-FOD-02",
+       "S003-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S003",
+      "ids": [
+       "S003-HYG-01",
+       "S003-WAT-03",
+       "S003-FOD-01",
+       "S003-WAT-02",
+       "S003-WAT-04"
+      ]
+     },
+     {
+      "area": "S007",
+      "ids": [
+       "S007-HYG-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "C",
+    "stops": [
+     {
+      "area": "S005",
+      "ids": [
+       "S005-HYG-01",
+       "S005-FOD-01",
+       "S005-WAT-01",
+       "S005-WAT-03",
+       "S005-WAT-02",
+       "S005-MED-01"
+      ]
+     }
+    ]
+   },
+   {
+    "model": "A",
+    "stops": [
+     {
+      "area": "S007",
+      "ids": [
+       "S007-WAT-02",
+       "S007-FOD-01"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]
