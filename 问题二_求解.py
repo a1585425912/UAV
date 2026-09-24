@@ -252,8 +252,6 @@ def main():
             records.append((f"词典序候选_{profile}_种子{seed}", lex_plan))
             if best_meta is None or penalty(plan["metrics"], PROFILES[profile]) < penalty(best_plan["metrics"], PROFILES[profile]) - 1e-7:
                 best_specs, best_plan, best_meta = specs, plan, meta
-        if profile != "完成时间优先":
-            save(best_plan, data, profile)
         records.append((profile, best_plan))
     # 主方案严格按零硬违约、零加权延误后的 F2/F3/F4 顺序选取所有已找到的可行点。
     main_name, main_plan = min(records, key=lambda item: priority(item[1]["metrics"]))
