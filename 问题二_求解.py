@@ -231,7 +231,6 @@ def nondominated(records):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--checkpoint", action="store_true", help="只生成可行检查点 V1")
     parser.add_argument("--iterations", type=int, default=4000)
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     args = parser.parse_args()
@@ -239,13 +238,8 @@ def main():
     start_specs, warm, milp_info = optimize_seed(data)
     assert warm["metrics"]["hard_excess_s"] <= 1e-6 and warm["metrics"]["weighted_tardiness"] <= 1e-6
     OUT.mkdir(parents=True, exist_ok=True)
-    if not (OUT / "检查点V1_完整方案.json").exists():
-        save(warm, data, "检查点V1", with_template=True)
-        (OUT / "检查点V1_求解信息.json").write_text(json.dumps(milp_info, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("检查点 V1", warm["metrics"], milp_info, flush=True)
-    if args.checkpoint:
-        return
-    records = [("检查点V1", warm)]
+    print("参考热启动", warm["metrics"], milp_info, flush=True)
+    records = [("参考热启动", warm)]
     traces, metadata = [], []
     for profile in PROFILES:
         best_specs, best_plan, best_meta = start_specs, warm, None
@@ -258,7 +252,8 @@ def main():
             records.append((f"词典序候选_{profile}_种子{seed}", lex_plan))
             if best_meta is None or penalty(plan["metrics"], PROFILES[profile]) < penalty(best_plan["metrics"], PROFILES[profile]) - 1e-7:
                 best_specs, best_plan, best_meta = specs, plan, meta
-        save(best_plan, data, profile, with_template=profile == "完成时间优先")
+        if profile != "完成时间优先":
+            save(best_plan, data, profile)
         records.append((profile, best_plan))
     # 主方案严格按零硬违约、零加权延误后的 F2/F3/F4 顺序选取所有已找到的可行点。
     main_name, main_plan = min(records, key=lambda item: priority(item[1]["metrics"]))

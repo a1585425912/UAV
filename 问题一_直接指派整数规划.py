@@ -17,7 +17,7 @@ import numpy as np
 from scipy.optimize import Bounds, LinearConstraint, milp
 from scipy.sparse import coo_matrix
 
-from 问题一_统一航段精确组批 import load_inputs, operation_time, safe_payload, trip
+from 问题一_基础计算 import load_inputs, operation_time, safe_payload, trip
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "results" / "问题一_非枚举整数规划"
@@ -250,6 +250,8 @@ def main():
                "累计作业时间_s": sum(r["作业时间_s"] for r in selected),
                "最低返航SOC": min(r["返航SOC"] for r in selected), "分区求解": stats}
     (OUT / "汇总.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    from 问题一_主方案模板 import main as write_main_template
+    write_main_template()
     if args.sensitivity:
         sensitivity = []
         scenario_batches = []

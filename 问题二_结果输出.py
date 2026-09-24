@@ -45,9 +45,9 @@ def tabulate(plan, data):
 
 
 def fill_template(sorties, delivery, destination):
-    source = ROOT / "results" / "问题一_参考口径" / "结果提交_问题一参考口径.xlsx"
+    source = ROOT / "results" / "问题一_非枚举整数规划" / "结果提交_问题一主方案.xlsx"
     if not source.exists():
-        source = ROOT.parent / "D题" / "结果提交模板.xlsx"
+        raise FileNotFoundError("请先运行 问题一_主方案模板.py，确保 Q1 工作表采用最新非枚举方案")
     workbook = load_workbook(source)
     sheets = workbook.sheetnames[:]
     for name, data, fields in (("Q2_运输架次", sorties,
@@ -63,7 +63,10 @@ def fill_template(sorties, delivery, destination):
                     sample = sheet.cell(2, column)
                     target._style = copy(sample._style)
                     target.alignment = copy(sample.alignment)
-                target.value = record[field]
+                value = record[field]
+                target.value = float(value) if field in {
+                    "开始时刻_s", "返回O01时刻_s", "架次能耗_kWh", "交付完成时刻_s"
+                } else value
     assert workbook.sheetnames == sheets
     workbook.save(destination)
     verify = load_workbook(destination, read_only=True, data_only=True)

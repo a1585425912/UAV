@@ -22,7 +22,7 @@ def write_csv(path, fields, rows):
         writer.writerows(rows)
 
 
-def save(result, stem="检查点V1"):
+def save(result, stem="主方案"):
     OUT.mkdir(parents=True, exist_ok=True)
     data = load_data()
     trips = []

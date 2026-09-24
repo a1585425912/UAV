@@ -135,9 +135,9 @@ def verify_plan(stem, inputs_bundle):
 def main():
     source = inputs()
     stems = sorted(path.name.removesuffix("_逐架次.csv") for path in OUT.glob("*_逐架次.csv"))
-    assert "主方案" in stems and "检查点V1" in stems
+    assert "主方案" in stems
     records = [verify_plan(stem, source) for stem in stems]
-    for stem in ("检查点V1", "主方案", "完成时间优先"):
+    for stem in ("主方案",):
         path = OUT / f"结果提交_{stem}.xlsx"
         if not path.exists():
             continue
@@ -156,7 +156,7 @@ def main():
         for d, values in zip(deliveries, list(book["Q2_逐箱交付"].values)[1:]):
             assert values[:3] == tuple(d[k] for k in ("货箱编号", "架次编号", "服务区编号"))
             close(values[3], d["交付完成时刻_s"], (stem, "模板交付时刻"))
-        source_book = load_workbook(ROOT / "results" / "问题一_参考口径" / "结果提交_问题一参考口径.xlsx",
+        source_book = load_workbook(ROOT / "results" / "问题一_非枚举整数规划" / "结果提交_问题一主方案.xlsx",
                                     read_only=True, data_only=True)
         for sheet in ("Q1_单点组批", "Q3_中继架次", "Q3_通信保障", "Q4_分区配置"):
             assert list(book[sheet].values) == list(source_book[sheet].values), (stem, sheet, "原工作表变动")

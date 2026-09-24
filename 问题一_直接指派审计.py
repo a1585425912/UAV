@@ -90,6 +90,16 @@ def main():
         assert len(rows) == int(record["全任务架次数"])
         assert math.isclose(e, float(record["全任务能耗_kWh"]), abs_tol=1e-8)
         assert math.isclose(t, float(record["全任务累计时间_s"]), abs_tol=1e-8)
+    book = load_workbook(OUT / "结果提交_问题一主方案.xlsx", read_only=True, data_only=True)
+    template_rows = list(book["Q1_单点组批"].values)[1:]
+    assert len(template_rows) == len(batches)
+    for number, (trip, values) in enumerate(zip(batches, template_rows), 1):
+        assert values[:4] == (f"Q1-{number:02d}", trip["服务区"], trip["机型"], trip["货箱编号列表"])
+        for cell, key, multiplier in zip(values[4:],
+                                         ("质量_kg", "体积_m3", "作业时间_s", "能耗_kwh", "返航SOC"),
+                                         (1, 1, 1, 1, 100)):
+            assert math.isclose(float(cell), float(trip[key]) * multiplier, abs_tol=1e-8), (number, key)
+    book.close()
     result = {"status": "PASS", "boxes": len(boxes), "areas": 15, "caps": len(caps),
               "base_trips": len(batches), "scenarios": 4, "scenario_trips": len(scenarios)}
     (OUT / "独立审计报告.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -205,7 +205,7 @@ def result_tradeoff():
         ax.scatter([float(r["makespan_s"])/3600 for r in selected],
                    [float(r["energy_kwh"]) for r in selected], s=55,
                    label=f"{count} 架次", edgecolors="white", linewidth=.7)
-    for name, text in (("检查点V1","参考起点"), ("完成时间优先_种子4","最快"), ("架次优先_种子4","最低能耗")):
+    for name, text in (("参考热启动","参考起点"), ("完成时间优先_种子4","最快"), ("架次优先_种子4","最低能耗")):
         r = next((r for r in rows if r["方案"] == name), None)
         if r:
             ax.annotate(text, (float(r["makespan_s"])/3600,float(r["energy_kwh"])),

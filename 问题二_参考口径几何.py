@@ -4,7 +4,7 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-from 问题一_参考口径几何 import geodesic_distance
+from 地理计算 import geodesic_distance
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "results" / "问题二_参考口径"

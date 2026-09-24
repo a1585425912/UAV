@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import shutil
 import sys
 from pathlib import Path
 
@@ -12,7 +11,6 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 from utils.plot_style import choose_font
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT / "figures" / "问题一_统一航段"
 TARGET = ROOT / "figures" / "问题一_非枚举整数规划"
 RESULT = ROOT / "results" / "问题一_非枚举整数规划"
 sys.path.insert(0, str(Path.home() / ".codex" / "skills" / "math-modeling" / "tools" / "figure" / "scripts"))
@@ -55,13 +53,14 @@ def flow(name, labels, loop_from, loop_to):
 
 def main():
     TARGET.mkdir(parents=True, exist_ok=True)
-    # 几何、机型参数、载荷边界和最终数值与原统一航段结果完全相同，复用对应证据图。
+    # 数据图随当前结果提交；只重绘直接指派的求解过程与流程图。
     shared = ("raw_q1_distance_terrain", "raw_q1_range_payload", "raw_q1_box_count",
               "process_q1_energy_boundary", "process_q1_rated_soc",
               "result_q1_safe_payload", "result_q1_trips_by_area", "result_q1_trip_soc")
     for stem in shared:
         for suffix in (".svg", ".png"):
-            shutil.copyfile(SOURCE / (stem + suffix), TARGET / (stem + suffix))
+            if not (TARGET / (stem + suffix)).exists():
+                raise FileNotFoundError(f"当前版本的数据图缺失：{stem + suffix}")
     summary = json.loads((RESULT / "汇总.json").read_text(encoding="utf-8"))
     areas = sorted(summary["分区求解"])
     calls = [summary["分区求解"][area]["MILP调用次数"] for area in areas]

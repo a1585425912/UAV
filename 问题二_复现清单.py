@@ -20,7 +20,7 @@ def main() -> None:
         ROOT / "数据" / "无人机应急物资运输基础数据" / "物资需求与配送时限.xlsx",
         ROOT / "results" / "航路节点坐标与作业高度.csv",
         ROOT / "results" / "有向航段几何参数.csv",
-        ROOT / "results" / "问题一_参考口径" / "结果提交_问题一参考口径.xlsx",
+        ROOT / "results" / "问题一_非枚举整数规划" / "结果提交_问题一主方案.xlsx",
     ]
     manifest = module.build_manifest(
         inputs=inputs,

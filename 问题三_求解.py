@@ -1,4 +1,4 @@
-"""问题三：保存完整可行检查点并改进中继服务窗口。"""
+"""问题三：输出通过连续通信与资源核验的当前主方案。"""
 from __future__ import annotations
 
 import argparse
@@ -20,11 +20,6 @@ def main():
         assert abs(point.alt - terrain.elevation(point.lon, point.lat) - 300) < 1e-5, name
     specs, _, milp_info = optimize_seed(data)
     starts, resources = transport_starts(specs, REFERENCE_STARTS, data)
-    if not (OUT / "检查点V1_完整方案.json").exists():
-        checkpoint = evaluate_plan(specs, starts, relay_plan(terrain), args.resolution, resources)
-        assert checkpoint["metrics"]["communication_gap_s"] == 0
-        assert checkpoint["metrics"]["hard_excess_s"] == 0
-        save(checkpoint, "检查点V1")
     main_plan = evaluate_plan(specs, starts, relay_plan(terrain, 4695, 6260, 7315),
                               args.resolution, resources)
     assert main_plan["metrics"]["communication_gap_s"] == 0

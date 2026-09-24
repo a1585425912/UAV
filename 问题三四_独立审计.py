@@ -11,7 +11,7 @@ from openpyxl import load_workbook
 from PIL import Image
 
 from 问题二_独立审计 import close, inputs, leg_value, recharge
-from 问题一_参考口径几何 import geodesic_distance
+from 地理计算 import geodesic_distance
 
 
 ROOT = Path(__file__).resolve().parent
@@ -307,7 +307,6 @@ def verify_template():
 def main():
     source = inputs()
     q3 = verify_q3("主方案", source)
-    verify_q3("检查点V1", source)
     q4 = verify_q4(q3)
     verify_template()
     report = {"状态": "PASS", "问题三主方案指标": q3["metrics"], "问题四复算": q4,

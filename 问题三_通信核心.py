@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image
 from openpyxl import load_workbook
 
-from 问题一_参考口径几何 import geodesic_distance
+from 地理计算 import geodesic_distance
 from 问题二_调度核心 import charge_time
 
 
