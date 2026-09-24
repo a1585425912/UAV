@@ -13,7 +13,7 @@
 
 ## 复现
 
-将原始 `数据/` 目录放在仓库根目录，保持原文件名和层级。需要 Python 的 `numpy`、`scipy`、`openpyxl`、`pandas`、`pillow`、`matplotlib`；绘图使用本地 math-modeling Skill 的导出工具和中文字体。按顺序运行：
+将原始 `数据/` 目录放在仓库根目录，保持原文件名和层级；几何重建需要原始 DEM `.mat`，通信验证需要同一 DEM 的 `.tif`。需要 Python 的 `numpy`、`scipy`、`openpyxl`、`pandas`、`pillow`、`matplotlib`；绘图使用本地 math-modeling Skill 的导出工具和中文字体。按顺序运行：
 
 ```bash
 python 航路几何数据.py

@@ -14,9 +14,6 @@ import numpy as np
 from openpyxl import load_workbook
 from scipy.io import loadmat
 
-from 问题1_求解 import line_cells
-
-
 ROOT = Path(__file__).resolve().parent
 NODE_PATH = ROOT / "数据" / "无人机应急物资运输基础数据" / "调度中心与服务区.xlsx"
 DEM_PATH = next((ROOT / "数据").rglob("*DEM.mat"))
@@ -41,6 +38,33 @@ def local_xy(lon: float, lat: float, lon0: float, lat0: float) -> tuple[float, f
     east = -math.sin(l0) * dx + math.cos(l0) * dy
     north = -math.sin(p0) * math.cos(l0) * dx - math.sin(p0) * math.sin(l0) * dy + math.cos(p0) * dz
     return east, north
+
+
+def line_cells(lon0, lat0, lon1, lat1, dem_meta):
+    """返回有向航段穿过的 DEM 像元高程；沿用现行几何缓存的穿格口径。"""
+    dem, lat_top, lon_left, dx, dy, nodata = dem_meta
+    x0, y0 = (lon0 - lon_left) / dx, (lat_top - lat0) / dy
+    x1, y1 = (lon1 - lon_left) / dx, (lat_top - lat1) / dy
+    breaks = [0.0, 1.0]
+    for a, b in ((x0, x1), (y0, y1)):
+        if abs(b - a) < 1e-12:
+            continue
+        lo, hi = sorted((a, b))
+        for boundary in np.arange(math.floor(lo - 0.5) + 1, math.ceil(hi - 0.5) + 1) + 0.5:
+            t = (boundary - a) / (b - a)
+            if 0 < t < 1:
+                breaks.append(float(t))
+    breaks.sort()
+    values = []
+    for left, right in zip(breaks[:-1], breaks[1:]):
+        t = (left + right) / 2
+        row = math.floor(y0 + t * (y1 - y0) + 0.5)
+        col = math.floor(x0 + t * (x1 - x0) + 0.5)
+        assert 0 <= row < dem.shape[0] and 0 <= col < dem.shape[1], "航段离开DEM覆盖"
+        z = float(dem[row, col])
+        assert z != nodata and np.isfinite(z), "航段经过无效DEM像元"
+        values.append(z)
+    return values
 
 
 def write_csv(path: Path, fieldnames: list[str], data: list[dict]) -> None:
