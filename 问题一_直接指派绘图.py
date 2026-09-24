@@ -10,6 +10,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 from utils.plot_style import choose_font
 from plot_q1_distance_terrain import main as plot_distance_terrain
 from plot_q1_rated_soc import main as plot_rated_soc
+from plot_q1_trips_by_area import main as plot_trips_by_area
 
 ROOT = Path(__file__).resolve().parent
 TARGET = ROOT / "figures" / "问题一_非枚举整数规划"
@@ -57,10 +58,11 @@ def main():
     TARGET.mkdir(parents=True, exist_ok=True)
     plot_distance_terrain(TARGET)
     plot_rated_soc()
+    plot_trips_by_area(TARGET)
     # 其余数据图随当前结果提交；下文重绘直接指派的求解过程与流程图。
     shared = ("raw_q1_range_payload", "raw_q1_box_count",
               "process_q1_energy_boundary", "process_q1_rated_soc",
-              "result_q1_safe_payload", "result_q1_trips_by_area", "result_q1_trip_soc")
+              "result_q1_safe_payload", "result_q1_trip_soc")
     for stem in shared:
         if not (TARGET / (stem + ".png")).exists():
             raise FileNotFoundError(f"当前版本的数据图缺失：{stem}.png")
