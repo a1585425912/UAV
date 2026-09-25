@@ -13,10 +13,10 @@
    θ 才是真实仰角。沿 d 对地形做射线步进，即可算出每个节点地面锚点的最小视线余量；
 4. 选角：在「被遮挡的服务区不超过 ``MAX_OCCLUDED`` 个」的前提下取**最斜**（elev 最小）
    的视角，同一 elev 内先取最小视线余量最大者、再取节点屏幕间距最大者；
+   遮挡只用于选角，成图不再单独标注被遮挡的节点；
 5. 抗遮挡绘制：曲面用山体阴影着色；节点标记杆、地面锚点与标记点用
    ``proj3d.proj_transform`` 投影到图面后以二维 artist 叠加绘制，不会被三维曲面的
-   绘制顺序遮住。地面锚点被山脊挡住的节点改用**橙色虚线杆 + 空心圈**引出，
-   读者据此仍能定位该服务区。
+   绘制顺序遮住；16 个节点一律同款实线标记杆 + 实心锚点。
 
 运行：``python 绘制三维地形.py``
 输出：``figures/地形与服务区分布/raw_dem_terrain_3d.{png,svg}``（主图）、
@@ -68,7 +68,7 @@ SURFACE_MAX_COLS = 280        # 曲面几何仍取 DEM 高程，较细网格减�
 SURFACE_MAX_ROWS = 220
 RAY_STEP_KM = 0.030           # 视线射线步长（≈ DEM 分辨率）
 VIS_MARGIN_M = 2.0            # 判定「可见」时的最小视线余量（m）
-MAX_OCCLUDED = 2              # 允许被地形遮挡的服务区个数上限（用虚线杆引出）
+MAX_OCCLUDED = 2              # 选角时允许被地形遮挡的服务区个数上限（成图不做标注）
 ELEV_SEARCH = (26.0, 40.0)    # mplot3d elev 搜索范围：越小越斜、越不俯视
 ELEV_STEP = 1.0
 ELEV_PASS_RATIO = 0.08        # 选定 elev 至少有 8% 的方位角满足遮挡上限
@@ -89,7 +89,6 @@ TERRAIN_CMAP = LinearSegmentedColormap.from_list(
 )
 FONT = FontProperties(fname="C:/Windows/Fonts/msyh.ttc")
 LABEL_FONTSIZE = 6.6
-OCCLUDED_COLOR = "#D55E00"
 LABEL_CANDIDATES = (
     (6, 4, "left", "bottom"), (6, -4, "left", "top"),
     (-6, 4, "right", "bottom"), (-6, -4, "right", "top"),
@@ -491,19 +490,13 @@ def build_3d_figure(scene: Scene, view: dict):
 
     ground_2d, work_2d = project(scene.node_ground), project(scene.node_work)
     for index in range(16):
-        hidden = bool(occluded[index])
         ax.add_artist(Line2D([ground_2d[index][0], work_2d[index][0]],
                              [ground_2d[index][1], work_2d[index][1]],
-                             color=OCCLUDED_COLOR if hidden else "#1B2A32",
-                             linewidth=1.15 if hidden else 0.8,
-                             linestyle=(0, (2.6, 1.4)) if hidden else "-",
-                             alpha=0.95, transform=ax.transData, zorder=100,
-                             clip_on=False))
+                             color="#1B2A32", linewidth=0.8, alpha=0.95,
+                             transform=ax.transData, zorder=100, clip_on=False))
         ax.add_artist(Line2D([ground_2d[index][0]], [ground_2d[index][1]],
-                             marker="o", markersize=4.2 if hidden else 2.4,
-                             markerfacecolor="white" if hidden else "#1B2A32",
-                             markeredgecolor=OCCLUDED_COLOR if hidden else "none",
-                             markeredgewidth=1.0, linestyle="None",
+                             marker="o", markersize=2.4, markerfacecolor="#1B2A32",
+                             markeredgecolor="none", linestyle="None",
                              transform=ax.transData, zorder=101, clip_on=False))
         if index == 0:
             ax.add_artist(Line2D([work_2d[index][0]], [work_2d[index][1]], marker="*",
@@ -525,14 +518,8 @@ def build_3d_figure(scene: Scene, view: dict):
         Line2D([], [], marker="*", linestyle="None", markersize=11,
                markerfacecolor="#D55E00", markeredgecolor="#D55E00",
                label="调度中心 O01"),
-        Line2D([], [], color="#1B2A32", linewidth=0.9, label="地面锚点视线通畅"),
+        Line2D([], [], color="#1B2A32", linewidth=0.9, label="地面锚点与标记杆"),
     ]
-    if occluded.any():
-        legend_handles.append(
-            Line2D([], [], color=OCCLUDED_COLOR, linewidth=1.15, linestyle=(0, (2.6, 1.4)),
-                   marker="o", markersize=4.2, markerfacecolor="white",
-                   markeredgecolor=OCCLUDED_COLOR,
-               label="本视角估计遮挡（虚线引出）"))
     fig.legend(handles=legend_handles, loc="upper left", bbox_to_anchor=(0.668, 0.975),
                frameon=False, fontsize=8.0, prop=FONT, handletextpad=0.6, labelspacing=0.5)
 
@@ -557,26 +544,11 @@ def build_3d_figure(scene: Scene, view: dict):
 
     title = "镇龙乡任务区 DEM 三维地形与调度中心／服务区位置"
     fig.text(0.010, 0.950, title, fontsize=14.0, weight="bold", fontproperties=FONT)
-    hidden_names = [scene.nodes[i]["name"] for i in range(16) if occluded[i]]
-    note = ("；".join(hidden_names) + " 的地面锚点在本 DEM/射线采样下估计遮挡，用橙色虚线杆引出") if hidden_names \
-        else "16 个地面锚点视线均通畅"
-    caption = (
-        f"数据与投影：镇龙乡及周边 30 m DEM，正交投影，O01 为水平原点，+x 向东、+y 向北；"
-        f"纵向放大 {EXAGGERATION:.1f} 倍仅用于显示，不改变高程数值。\n"
-        f"标记点取作业海拔（服务区=地面+30 m），竖线底端为 DEM 地面锚点；"
-        f"视角 mplot3d elev={view['elev']:.0f}°、方位角 {view['azim']:.0f}°"
-        f"（等效真实仰角 {view['theta']:.0f}°）。\n"
-        f"遮挡检验：{note}。"
-    )
-    fig.text(0.010, 0.012, caption, fontsize=7.6, color="#5B6570",
-             fontproperties=FONT, linespacing=1.55)
 
-    label_texts = [f"{scene.nodes[i]['name']}（估计遮挡）" if occluded[i]
-                   else scene.nodes[i]["name"] for i in range(16)]
-    label_colors = [OCCLUDED_COLOR if occluded[i] else "#17252B" for i in range(16)]
     failing, clashes = place_labels(
-        ax, work_2d, label_texts, fontsize=LABEL_FONTSIZE, dpi=fig.dpi,
-        occupied=marker_boxes(work_2d, ax, dpi=fig.dpi), colors=label_colors)
+        ax, work_2d, [node["name"] for node in scene.nodes],
+        fontsize=LABEL_FONTSIZE, dpi=fig.dpi,
+        occupied=marker_boxes(work_2d, ax, dpi=fig.dpi))
 
     # 叠加标记依赖「投影矩阵」在重绘间保持稳定，这里显式核验。
     fig.canvas.draw()
@@ -589,8 +561,8 @@ def build_3d_figure(scene: Scene, view: dict):
         "有节点标记落在坐标区外"
     return fig, ax, {"label_failures": failing, "label_clashes": clashes,
                      "projection_drift": drift, "screen_px": screen,
-                     "occluded": hidden_names, "margins": margins,
-                     "ground_2d": ground_2d, "work_2d": work_2d}
+                     "occluded": [scene.nodes[i]["name"] for i in range(16) if occluded[i]],
+                     "margins": margins, "ground_2d": ground_2d, "work_2d": work_2d}
 
 
 def build_plan_figure(scene: Scene) -> plt.Figure:
