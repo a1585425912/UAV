@@ -8,16 +8,18 @@
    该判据对整段静止区间有效；运动段仍用外包走廊证明（保守，但距离上界已收紧）。
 返回 (是否认证, 依据)。
 """
-import sys, os, math
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
+import sys, math
+from pathlib import Path
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / "code"))
 from PIL import Image
 from 问题三_通信核心 import load_nodes, load_parameters
 from 问题三_像元点链路复核 import worst_terrain_clearance
 from 问题三_全程通信重认证 import PointRasterTerrain
 
-ROOT = r"D:\git\math_modeling\UAV"
 NODES = load_nodes(); PARAMS = load_parameters(); TERRAIN = PointRasterTerrain()
-IMAGE = Image.open(os.path.join(ROOT, "数据", "镇龙乡及周边30米DEM.tif"))
+IMAGE = Image.open(ROOT / "数据" / "镇龙乡及周边30米DEM.tif")
 
 def _planar(p):
     x, y = TERRAIN.xy(p)

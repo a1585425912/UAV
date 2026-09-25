@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
-"""对 plan_3relay_ref.json 做逐点通信 + 物理/资源全量复核。"""
-import sys, os, json, math
+"""对三中继候选做逐点通信 + 物理/资源全量复核。"""
+import argparse
+import sys, json, math
+from pathlib import Path
 from collections import defaultdict
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / "code"))
 from PIL import Image
 from 问题二_调度核心 import load_data, evaluate_sortie
 from 问题三_通信核心 import load_nodes, load_parameters, Point, Terrain
@@ -10,8 +14,7 @@ from 问题三_全程通信重认证 import PointRasterTerrain
 from 问题三_联合调度 import trajectory, position
 from 问题三_像元点链路复核 import link
 D = load_data(); nodes = load_nodes(); params = load_parameters()
-IM = Image.open(r"D:\git\math_modeling\UAV\数据\镇龙乡及周边30米DEM.tif")
-plan = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "plan_3relay_ref.json"), encoding="utf-8"))
+IM = Image.open(ROOT / "数据" / "镇龙乡及周边30米DEM.tif")
 
 def pos_at(t, start, rel):
     ev = evaluate_sortie({"model": t["model"], "stops": t["stops"]}, D)
@@ -21,6 +24,10 @@ def pos_at(t, start, rel):
     return None
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="三中继候选逐点与资源复核")
+    parser.add_argument("--plan", default=str(HERE / "plan_3relay_fixed_final.json"))
+    args = parser.parse_args()
+    plan = json.loads(Path(args.plan).resolve().read_text(encoding="utf-8"))
     hubs = [r for r in plan["relays"]]
     def active(tt): return [r for r in hubs if r["link_ready_s"] <= tt <= r["service_end_s"]]
     hub = nodes["O01"]; gw = Point(hub.lon, hub.lat, hub.alt + params["gateway_height"])

@@ -2,7 +2,7 @@
 """第四问（改进求解）：固定第三问已连续通信认证的联合方案，只决定服务区分组与各组资源配置。
 
 唯一输入（显式传入，默认见 DEFAULT_SOURCE）：
-    code/问题三_改进求解/plan_windows_opt.json   （22 运输架次 + 4 中继架次，联合完成时间 8914.079576916525 s）
+    code/问题三_改进求解/plan_windows_opt.json   （22 运输架次 + 4 中继架次，联合完成时间 8915.079576916525 s）
 输出目录（显式传入，默认见 DEFAULT_OUT）：
     results/问题四_改进求解/                     （独立目录，不写旧方案与旧提交工作簿）
 
@@ -181,8 +181,8 @@ class Instance:
         """subset: 作为矩阵列的任务组（由单元组成的可迭代对象，可含多个单元）。
 
         运输类资源：落在本组内的单元直接计入；
-        中继类资源：中继架次所保障的**全部**单元都在本组内时，本组才需要独立配置该架次
-        （若该架次跨越多个任务组，则每个相关组各配置一整套，不做部分配置）。
+        中继类资源：中继架次只要保障到本组任一单元，本组就需要独立配置该架次。
+        若该架次跨越多个任务组，则每个相关组各配置一整套，不做部分配置。
         """
         key = frozenset(subset)
         if key in self._cache:
@@ -195,7 +195,7 @@ class Instance:
                     if ident in key:
                         items.append((s, e))
                 else:
-                    if self.relay_units[ident] <= key:
+                    if self.relay_units[ident] & key:
                         items.append((s, e))
             rows[cat] = peak_sweep(items)
         self._cache[key] = rows
@@ -206,7 +206,8 @@ class Instance:
         key = frozenset(subset)
         out = []
         for rid in self.relay_sorties:
-            if self.relay_units[rid] <= key:
+            hit_units = self.relay_units[rid] & key
+            if hit_units:
                 relay = next(r for r in self.plan["relays"] if r["id"] == rid)
                 out.append({
                     "中继架次": rid,
@@ -215,7 +216,7 @@ class Instance:
                     "悬停点": relay.get("site", ""),
                     "被保障运输架次": sorted(self.trips_by_relay[rid]),
                     "本架次保障的全部单元": sorted(self.relay_units[rid]),
-                    "本组命中服务区": sorted(a for ci in self.relay_units[rid] for a in self.units[ci]),
+                    "本组命中服务区": sorted(a for ci in hit_units for a in self.units[ci]),
                 })
         return out
 
@@ -652,7 +653,7 @@ def main() -> None:
                 if kind == "x":
                     if ident in sub:
                         items.append((s, e))
-                elif inst.relay_units[ident] <= sub:
+                elif inst.relay_units[ident] & sub:
                     items.append((s, e))
             sw, iv = peak_sweep(items), peak_independent(items)
             checked += 1

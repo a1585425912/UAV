@@ -84,7 +84,7 @@ def main() -> None:
             pool["U_" + t["model"]].append((t["start_s"], t["return_s"]))
             pool["B_" + t["model"]].append((t["start_s"], t["charge_end_s"]))
         for rid, r in relays.items():
-            if relay_units[rid] <= sel:
+            if relay_units[rid] & sel:
                 pool["R"].append((r["depart_s"], r["relay_free_s"]))
                 pool["RB"].append((r["depart_s"], r["energy_free_s"]))
         out = {}

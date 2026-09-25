@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
-"""q3_cont_cert：对给定方案做连续通信认证（含中继启停与阶段边界，自适应细分）。"""
-import sys, os, json
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+"""对给定方案做连续通信认证（含中继启停与阶段边界，自适应细分）。"""
+import argparse
+import json
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / "code"))
+sys.path.insert(0, str(HERE))
 import q3_cert_cont as CC
 from 问题三_通信核心 import Point, load_nodes
 from 问题三_联合调度 import trajectory, position
@@ -54,8 +60,15 @@ def run(transport, relays, resolution=2.0):
     return total, certified, detail
 
 if __name__ == "__main__":
-    plan = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "plan_3relay_fixed.json"), encoding="utf-8"))
-    tot, cert_, det = run(plan["transport"], plan["relays"], 2.0)
+    parser = argparse.ArgumentParser(description="问题三连续通信证书复核")
+    parser.add_argument("--plan", default=str(HERE / "plan_windows_opt.json"))
+    parser.add_argument("--resolution", type=float, default=0.5)
+    args = parser.parse_args()
+    source = Path(args.plan).resolve()
+    plan = json.loads(source.read_text(encoding="utf-8"))
+    tot, cert_, det = run(plan["transport"], plan["relays"], args.resolution)
+    print("方案:", source)
     print("连续认证：已认证 %.3f s，未认证 %.3f s" % (cert_, tot))
     for x in det: print("   ", x)
+    raise SystemExit(0 if tot <= 1e-8 else 2)
 

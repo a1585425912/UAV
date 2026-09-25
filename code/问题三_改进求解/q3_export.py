@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """导出问题三窗口优化方案的逐运输/逐箱/中继/通信明细（独立目录，不覆盖已发布结果）。"""
-import sys, os, json, csv
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
-OUT = os.path.dirname(os.path.abspath(__file__))
+import os, json, csv
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent
 
 def wr(p, rows):
     with open(p, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 
 if __name__ == "__main__":
-    o = json.load(open(os.path.join(OUT, "plan_windows_opt.json"), encoding="utf-8"))
+    o = json.loads((OUT / "plan_windows_opt.json").read_text(encoding="utf-8"))
     tr, de, rl, cm = [], [], [], []
     for t in o["transport"]:
         tr.append({"架次编号": t["id"], "机型": t["model"], "无人机": t.get("uav"), "电池": t.get("battery"),
@@ -31,5 +32,5 @@ if __name__ == "__main__":
                    "结束_s": round(c["end_s"], 6), "保障方式": c["status"], "中继架次": c["relay_id"]})
     for name, rows in [("方案_窗口优化_逐运输架次.csv", tr), ("方案_窗口优化_逐箱交付.csv", de),
                        ("方案_窗口优化_中继架次.csv", rl), ("方案_窗口优化_通信保障.csv", cm)]:
-        wr(os.path.join(OUT, name), rows); print("wrote", name, len(rows), "rows")
+        wr(OUT / name, rows); print("wrote", name, len(rows), "rows")
     print("metrics:", o["metrics"])

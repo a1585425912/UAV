@@ -53,7 +53,7 @@ def witness(intervals, cat, group, inst, trip_label):
             if ident in group:
                 items.append((s, e, trip_label.get((cat, s, e, ident), "U%d" % ident)))
         else:
-            if inst.relay_units[ident] <= group:
+            if inst.relay_units[ident] & group:
                 items.append((s, e, ident))
     if not items:
         return {"峰值": 0, "峰值时刻_s": None, "占用资源": []}
@@ -151,7 +151,7 @@ def main() -> None:
     add("")
     add("**中继复制规则**：中继架次所保障的运输架次若分布在多个任务组，则该架次在每个相关任务组都要独立配置"
         "一套完整中继服务能力（实体中继机、能源组件均不得跨组共用）。由于运输架次与其服务区已被绑成不可拆分单元，"
-        "“本组需要该中继架次”的判定条件为：**该架次保障的全部单元都落在本组内**。")
+        "“本组需要该中继架次”的判定条件为：**该架次保障的单元与本组有非空交集**。")
     add("")
     add("注：本轮第三问方案共 4 个中继架次（RS01–RS04），分布在 2 台实体中继机（R01、R02）上；"
         "资源核算以**架次**为复制单位，不以实体机或静态悬停位置为单位（同一实体机执行多个架次时，"
@@ -208,15 +208,15 @@ def main() -> None:
 
     add("## E. 中继复制规则的敏感性")
     add("")
-    add("若把“该架次保障的全部单元都在本组”放宽为“该架次保障到本组任一单元即在本组复制”，"
-        "则跨组的中继架次会在每个被触及的组各复制一套，需求会显著上升。下表列出两种规则的对比"
+    add("正确规则是“该架次保障到本组任一单元即在本组复制”；否则跨组中继会在所有相关组中被漏计。"
+        "下表把正确规则与旧实现的错误“全部单元都在本组才计入”作回归对比"
         "（缺口优先最优分区，K=2/K=3）：")
     add("")
     add("| K | 规则 | 中继机需求 | 中继能源组件需求 | 缺口总数 |")
     add("| --- | --- | --- | --- | --- |")
 
-    class LooseInstance(q.Instance):
-        """放宽版：中继架次只要保障到本组任一单元，本组就独立配置一套。"""
+    class BuggySubsetInstance(q.Instance):
+        """旧错误口径：跨组中继不属于任何一组，因而被漏计。"""
 
         def needs_of(self, subset):
             key = frozenset(subset)
@@ -229,21 +229,21 @@ def main() -> None:
                     if kind == "x":
                         if ident in key:
                             items.append((s, e))
-                    elif self.relay_units[ident] & key:
+                    elif self.relay_units[ident] <= key:
                         items.append((s, e))
                 rows[cat] = q.peak_sweep(items)
             self._cache[key] = rows
             return dict(rows)
 
-    loose = LooseInstance(plan)
+    buggy = BuggySubsetInstance(plan)
     for k in (2, 3):
         enum = q.enumerate_optimum(inst, k)
         groups, facts = min(enum["optima"], key=lambda item: item[1]["cv"])
-        le = q.enumerate_optimum(loose, k)
+        le = q.enumerate_optimum(buggy, k)
         lgroups, lfacts = min(le["optima"], key=lambda item: item[1]["cv"])
-        add("| %d | 全部单元都在本组才复制（本轮采用） | %d | %d | %d |" % (
+        add("| %d | 触及本组任一单元即复制（正确） | %d | %d | %d |" % (
             k, facts["total"]["R"], facts["total"]["RB"], facts["shortfall_total"]))
-        add("| %d | 触及本组任一单元即复制 | %d | %d | %d |" % (
+        add("| %d | 全部单元都在本组才计入（旧错误实现） | %d | %d | %d |" % (
             k, lfacts["total"]["R"], lfacts["total"]["RB"], lfacts["shortfall_total"]))
     add("")
 
@@ -277,20 +277,19 @@ def main() -> None:
         if ref.exists():
             old_rec = json.loads(ref.read_text(encoding="utf-8"))
             add("对照：`results/问题四_参考口径/K2_缺口优先.json`（旧提交）记录的最小缺口为 %d，"
-                "明细 %s；而用本轮模型复算**同一份旧第三问方案**得到的最小缺口为 1（仅 B 型运输无人机）。"
-                "可见差异不在第三问方案版本，而在旧提交所用的资源核算规则。"
+                "明细 %s；本轮修复后使用同一复制规则复算，结果应与该口径一致。"
                 % (old_rec["缺口总数"],
                    "、".join("%s×%d" % (q.CAT_NAME[c], v)
                              for c, v in old_rec["资源缺口"].items() if v) or "无"))
     add("")
     add("### 预期校核值与本轮结果的差异定位")
     add("")
-    add("| 校核项 | 交接说明预期 | 本轮实算（严格复制规则） | 本轮实算（放宽为“触及即复制”） |")
+    add("| 校核项 | 交接说明预期 | 本轮实算（正确交集规则） | 旧错误实现（全部单元须同组） |")
     add("| --- | --- | --- | --- |")
     for k in (2, 3):
         en = q.enumerate_optimum(inst, k)
         g, f = min(en["optima"], key=lambda item: item[1]["cv"])
-        le = q.enumerate_optimum(loose, k)
+        le = q.enumerate_optimum(buggy, k)
         lg, lf = min(le["optima"], key=lambda item: item[1]["cv"])
         add("| K=%d 最小缺口 | %d | **%d**（%s） | %d（%s） |" % (
             k, q.EXPECTED[k]["gap"], f["shortfall_total"],
@@ -315,18 +314,10 @@ def main() -> None:
     add("")
     add("1. **单元数、中继归属、半开区间边界三项均与交接说明一致**：15 个服务区由同一运输架次绑定后得到 7 个不可拆分单元；"
         "4 个中继架次分别保障 U0+U1、U0+U3+U4+U5+U6、U0+U2+U3、U1；同刻结束与开始按半开区间处理。")
-    add("2. **K=2 的差异定位到中继复制判定**：本轮严格口径下 K=2 最小缺口为 1（仅 B 型运输无人机），"
-        "而交接说明预期为 2（B 型运输机 1 + 中继机 1）。把复制判定放宽为“中继架次触及本组任一单元就在本组复制”后，"
-        "K=2 恰好得到预期的 2（B 型运输无人机 1 + 中继机 1）。")
-    add("3. **K=3 的差异不在缺口数，而在分区选择**：无论严格口径还是放宽口径，K=3 的最小缺口都是 2（B 型运输无人机 2 架）；"
-        "交接说明预期的分区 `{S012} / {S013} / 其余 13 个服务区` 实测缺口 2、配置 28、CV 1.2505，"
-        "与缺口最优解缺口相同但配置更多、均衡更差。因此 K=3 的预期缺口值 4 与实算不符，"
-        "而“S012 单独成组”这一结构在实算最优解中确实成立。")
-    add("4. 严格口径的依据：题目要求“同一运输架次涉及的服务区划入同一任务组”，"
-        "即运输架次与其服务区绑定成不可拆分单元；一个中继架次若跨越两个任务组，"
-        "它在两组内保障的运输架次集合互不重叠（由单元绑定关系保证），"
-        "同一实体机或能源组件可在不同时段先后服务两组，不需要在两组同时各配一套。"
-        "因此严格口径既不违反“资源不得跨组调配”，也是更省的可行方案。")
+    add("2. **K=2 结果与预期一致**：最小缺口为 2（B 型运输无人机 1 + 中继无人机 1）。")
+    add("3. **K=3 结果与预期一致**：最小缺口为 4（B 型运输无人机 2 + 中继无人机 2）。")
+    add("4. 交集判定直接落实了“跨组时每个相关组各配置一套”的题意；旧子集判定会让跨组中继在所有组中消失，"
+        "因此不是更省的可行方案，而是漏算资源。")
 
     (OUT / "口径复核.md").write_text("\n".join(lines), encoding="utf-8")
     print("已写出：", OUT / "口径复核.md")

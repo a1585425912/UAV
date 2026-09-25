@@ -1,7 +1,7 @@
 {
-  "脚本": "D:\\git\\math_modeling\\UAV\\code\\问题四_改进求解\\q4_partition.py",
-  "唯一输入": "D:\\git\\math_modeling\\UAV\\code\\问题三_改进求解\\plan_windows_opt.json",
-  "输入SHA256": "0bbdca1a962edaf6b736bb5be10dc7de3ecb79f567e3594d6891c900156fa314",
+  "脚本": "C:\\Users\\71523\\Documents\\Codex\\2026-09-25\\https-github-com-a1585425912-uav-https\\work\\UAV\\code\\问题四_改进求解\\q4_partition.py",
+  "唯一输入": "C:\\Users\\71523\\Documents\\Codex\\2026-09-25\\https-github-com-a1585425912-uav-https\\work\\UAV\\code\\问题三_改进求解\\plan_windows_opt.json",
+  "输入SHA256": "77aa79573689cd6afde66a3a83450fa33f56040e8316553bf0f000f5565fab77",
   "输入规模": {
     "运输架次": 22,
     "中继架次": 4,
@@ -12,8 +12,8 @@
     "communication_gap_s": 0.0,
     "hard_excess_s": 0,
     "weighted_tardiness": 0.0,
-    "makespan_s": 8914.079576916525,
-    "energy_kwh": 75.97752361039791,
+    "makespan_s": 8915.079576916525,
+    "energy_kwh": 75.97813472150902,
     "transport_sorties": 22,
     "relay_sorties": 4,
     "boxes": 80

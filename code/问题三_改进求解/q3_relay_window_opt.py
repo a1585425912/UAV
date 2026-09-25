@@ -2,15 +2,18 @@
 """固定运输方案，逐条压缩中继服务窗口（坐标下降 + 二分）。
 链式依赖：RS03.depart = RS01.relay_free；RS04.depart = RS02.relay_free。
 """
-import sys, os, json, copy
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
+import argparse, sys, json
+from pathlib import Path
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / "code"))
 from 问题三_通信核心 import Terrain, Point, relay_sortie
 from 问题三_联合调度 import evaluate_plan
 from 问题三_全程通信重认证 import PointRasterTerrain
 import 问题三_联合调度 as joint
-ROOT = r"D:\git\math_modeling\UAV"
-PUB = os.path.join(ROOT, "results", "问题三_参考口径", "主方案_完整方案.json")
-ter = Terrain()
+DEFAULT_SOURCE = HERE / "plan_windows_opt.json"
+DEFAULT_OUT = HERE / "plan_windows_opt.json"
+ter = PointRasterTerrain()
 
 def run(specs, starts, relays, resources):
     old = joint.Terrain; joint.Terrain = PointRasterTerrain
@@ -40,7 +43,16 @@ def feasible(specs, starts, relays, resources):
         return False, None
 
 if __name__ == "__main__":
-    pub = json.load(open(PUB, encoding="utf-8"))
+    parser = argparse.ArgumentParser(description="固定运输计划与点位，压缩四条中继服务窗口")
+    parser.add_argument("--source", default=str(DEFAULT_SOURCE))
+    parser.add_argument("--out", default=str(DEFAULT_OUT))
+    parser.add_argument(
+        "--safety-margin", type=float, default=1.0,
+        help="二分压缩后为每个中继服务窗口保留的连续时间安全裕量（秒）",
+    )
+    args = parser.parse_args()
+    source, out = Path(args.source).resolve(), Path(args.out).resolve()
+    pub = json.loads(source.read_text(encoding="utf-8"))
     specs = [{"model": t["model"], "stops": t["stops"]} for t in pub["transport"]]
     starts = [t["start_s"] for t in pub["transport"]]
     resources = [{"uav": t["uav"], "battery": t["battery"], "charge_end_s": t["charge_end_s"]} for t in pub["transport"]]
@@ -65,14 +77,20 @@ if __name__ == "__main__":
                 cur[rid] = hi; changed = True
             print("  sweep%d %s -> %.3f (%.1f s 压缩)" % (sweep, rid, cur[rid], base_relay["service_end_s"] - cur[rid]), flush=True)
         if not changed: break
-    relays = rebuild(pub, cur["RS01"], cur["RS02"], cur["RS03"], cur["RS04"])
+    # 二分搜索只能找到当前判据下的临界边界。若直接发布临界值，浮点误差、
+    # PixelIsPoint 地形重采样以及连续时间细分会造成亚秒级“未认证”区间。
+    # 在所有服务窗口上统一加小裕量；链式出发时间由 rebuild 自动重算。
+    if args.safety_margin < 0:
+        parser.error("--safety-margin 不能为负数")
+    final_end = {rid: cur[rid] + args.safety_margin for rid in cur}
+    relays = rebuild(pub, final_end["RS01"], final_end["RS02"], final_end["RS03"], final_end["RS04"])
     res = run(specs, starts, relays, resources); m = res["metrics"]
     print("\n最终: 缺口=%.6f 完成=%.6f E=%.6f 运输=%d 中继=%d" % (
         m["communication_gap_s"], m["makespan_s"], m["energy_kwh"], m["transport_sorties"], m["relay_sorties"]))
     for r in relays: print("  %s %s end=%.3f depart=%.3f ready=%.3f return=%.3f E=%.4f SOC=%.4f" % (
         r["id"], r["site"], r["service_end_s"], r["depart_s"], r["link_ready_s"], r["return_s"], r["energy_kwh"], r["soc"]))
-    json.dump({"transport": res["transport"], "relays": res["relays"], "deliveries": res["deliveries"],
-               "communications": res["communications"], "metrics": m},
-              open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "plan_windows_opt.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
-    print("saved plan_windows_opt.json")
+    out.write_text(json.dumps(
+        {"transport": res["transport"], "relays": res["relays"], "deliveries": res["deliveries"],
+         "communications": res["communications"], "metrics": m},
+        ensure_ascii=False, indent=1), encoding="utf-8")
+    print("saved", out)

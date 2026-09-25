@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "code"))
-from 问题二_调度核心 import load_data  # 仅用于读取机型参数与货箱清单
+from 问题二_调度核心 import charge_time, load_data  # 仅用于读取机型参数与货箱清单
 
 D = load_data()
 OUT = ROOT / "results" / "问题二_改进方案"
@@ -71,12 +71,24 @@ def verify(plan_path):
     errs = []
     # 1) 覆盖
     allbox = [b for s in sorties for b in s["box_ids"]]
+    sortie_ids = [s["id"] for s in sorties]
+    if len(sortie_ids) != len(set(sortie_ids)): errs.append("架次编号重复")
     if len(allbox) != 80 or len(set(allbox)) != 80: errs.append("箱覆盖不唯一")
     if set(allbox) != set(D["boxes"]): errs.append("箱集合不一致")
     # 2) 逐架次物理量
     for s in sorties:
         chk = independent_energy_and_time(s)
         dr = D["drones"][s["model"]]
+        valid_uavs = set(D["uavs"][s["model"]])
+        valid_batteries = set(D["batteries"][s["model"]]["ids"])
+        if s["uav"] not in valid_uavs: errs.append("%s 无人机型号不匹配" % s["id"])
+        if s["battery"] not in valid_batteries: errs.append("%s 电池型号不匹配" % s["id"])
+        for st in s["stops"]:
+            for box_id in st["ids"]:
+                if box_id not in D["boxes"]:
+                    errs.append("%s 未知货箱 %s" % (s["id"], box_id))
+                elif D["boxes"][box_id]["area"] != st["area"]:
+                    errs.append("%s 货箱服务区错误 %s" % (s["id"], box_id))
         if chk["payload"] > dr["payload"] + 1e-9: errs.append("%s 超质量" % s["id"])
         if chk["volume"] > dr["volume"] + 1e-9: errs.append("%s 超体积" % s["id"])
         if chk["soc"] < dr["reserve"] - 1e-9: errs.append("%s SOC 低于余量" % s["id"])
@@ -91,6 +103,10 @@ def verify(plan_path):
         # 返航
         t += chk["legs"][-1]["time"]
         if abs(t - s["return_s"]) > 1e-6: errs.append("%s 返航时刻不一致" % s["id"])
+        expected_charge_end = s["return_s"] + charge_time(
+            chk["soc"], D["batteries"][s["model"]]["full_charge_s"])
+        if abs(expected_charge_end - s["charge_end_s"]) > 1e-6:
+            errs.append("%s 充满时刻不一致" % s["id"])
     # 4) 时限
     hard = tardy = 0.0
     for b, t in deliveries.items():
@@ -110,14 +126,27 @@ def verify(plan_path):
             if b[0] < a[1] - 1e-6: errs.append("资源重叠 %s %s/%s" % (name, a[2], b[2]))
     # 6) 资源数量
     if len({s["uav"] for s in sorties}) > 8: errs.append("实体无人机超 8")
+    # 7) 汇总指标必须由明细重算一致，禁止只信 JSON 顶层数字。
+    rebuilt = {
+        "hard_excess_s": hard,
+        "weighted_tardiness": tardy,
+        "makespan_s": max(s["return_s"] for s in sorties),
+        "energy_kwh": sum(s["energy_kwh"] for s in sorties),
+        "sorties": len(sorties),
+        "boxes": len(deliveries),
+    }
+    for key, value in rebuilt.items():
+        if key not in plan["metrics"] or abs(float(plan["metrics"][key]) - float(value)) > 1e-6:
+            errs.append("汇总指标不一致 %s" % key)
     return {"file": os.path.basename(plan_path), "sorties": len(sorties),
             "makespan": plan["metrics"]["makespan_s"], "energy": plan["metrics"]["energy_kwh"],
             "boxes": len(deliveries), "errors": errs}
 
 
 if __name__ == "__main__":
-    files = sorted(OUT.glob("方案_*_完整方案.json"))
-    files += [OUT / "方案_时间优先(主方案)_完整方案.json"]
+    files = [Path(sys.argv[1]).resolve()] if len(sys.argv) > 1 else sorted(OUT.glob("方案_*_完整方案.json"))
+    if len(sys.argv) == 1:
+        files += [OUT / "方案_时间优先(主方案)_完整方案.json"]
     seen = set(); ok = 0
     for f in files:
         if f.name in seen: continue
@@ -129,5 +158,6 @@ if __name__ == "__main__":
             r["file"], status, r["sorties"], r["makespan"], r["energy"],
             "" if not r["errors"] else r["errors"][:3]))
     print("PASS %d / %d" % (ok, len(seen)))
+    raise SystemExit(0 if ok == len(seen) else 1)
 
 

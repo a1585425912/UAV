@@ -8,8 +8,11 @@
 4) 统一 Terrain：全程使用 PointRasterTerrain（GeoTIFF 1025=2 RasterPixelIsPoint）。
 边界集合 = 轨迹阶段边界 ∪ 中继建链/服务结束时刻 ∪ 均匀网格。
 """
-import sys, os, math
-sys.path.insert(0, r"D:\git\math_modeling\UAV\code")
+import sys, math
+from pathlib import Path
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / "code"))
 from PIL import Image
 from 问题二_调度核心 import load_data, evaluate_sortie
 from 问题三_通信核心 import load_nodes, load_parameters, Point
@@ -18,10 +21,9 @@ from 问题三_像元点链路复核 import worst_terrain_clearance
 from 地理计算 import geodesic_distance
 from 问题三_全程通信重认证 import PointRasterTerrain
 
-ROOT = r"D:\git\math_modeling\UAV"
 D = load_data(); NODES = load_nodes(); PARAMS = load_parameters()
 TERRAIN = PointRasterTerrain()
-IMAGE = Image.open(os.path.join(ROOT, "数据", "镇龙乡及周边30米DEM.tif"))
+IMAGE = Image.open(ROOT / "数据" / "镇龙乡及周边30米DEM.tif")
 HUB = NODES["O01"]
 GATEWAY = Point(HUB.lon, HUB.lat, HUB.alt + PARAMS["gateway_height"])
 

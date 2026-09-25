@@ -141,9 +141,9 @@ def main() -> None:
         plan["metrics"]["relay_sorties"], plan["metrics"]["communication_gap_s"],
         plan["metrics"]["boxes"]), "", str(Q3_PLAN.relative_to(ROOT)).replace("\\", "/"),
         sha256_of(Q3_PLAN), ""])
-    ws.append(["Q4 缺口说明", "K=2 缺口 1（B 型运输无人机 1 架）、配置 25；"
-                              "K=3 缺口 2（B 型运输无人机 2 架）、配置 26；"
-                              "其余 7 类资源均不缺，原因见 results/问题四_改进求解/第四问总结报告.md",
+    ws.append(["Q4 缺口说明", "K=2 缺口 2（B 型运输无人机 1 架、中继无人机 1 架）、配置 30；"
+                              "K=3 缺口 4（B 型运输无人机 2 架、中继无人机 2 架）、配置 33；"
+                              "其余 6 类资源均不缺，原因见 results/问题四_改进求解/第四问总结报告.md",
                "", "", "", ""])
 
     for sheet in wb.worksheets:
