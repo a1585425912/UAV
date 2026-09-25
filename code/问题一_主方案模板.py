@@ -11,7 +11,7 @@ from openpyxl import load_workbook
 ROOT = Path(__file__).resolve().parent.parent
 RESULT = ROOT / "results" / "问题一_非枚举整数规划"
 DEST = RESULT / "结果提交_问题一主方案.xlsx"
-OFFICIAL = ROOT.parent / "D题" / "结果提交模板.xlsx"
+OFFICIAL = ROOT / "结果提交模板.xlsx"
 SOURCE = RESULT / "最优组批_逐架次.csv"
 
 

@@ -1812,7 +1812,7 @@ def find_hits(text, pattern):
 def part_F():
     paper = ROOT / "山区洪涝灾害下无人机运输与通信协同优化_论文.docx"
     if not paper.is_file():
-        paper = REPO / "D题" / "山区洪涝灾害下无人机运输与通信协同优化.docx"
+        paper = ROOT / "paper" / "山区洪涝灾害下无人机运输与通信协同优化.docx"
     docs = {
         "README.md": (ROOT / "README.md").read_text(encoding="utf-8"),
         "问题一结果说明": (RES / "问题一_非枚举整数规划" / "结果说明.md").read_text(encoding="utf-8"),
@@ -2701,8 +2701,8 @@ def part_ce_obs(q1, q2, q3, q4, geom):
         d = ROOT / "figures" / name
         fig[name] = sorted({p.name.rsplit(".", 1)[0] for p in d.iterdir()
                             if p.suffix.lower() in (".png", ".svg")}) if d.is_dir() else []
-    pdf = REPO / "D题" / "数据" / "镇龙乡地理空间数据" / "镇龙乡地理空间数据说明.pdf"
-    docx = list((REPO / "D题" / "数据").rglob("镇龙乡地理空间数据说明.docx"))
+    pdf = ROOT / "数据" / "镇龙乡地理空间数据" / "镇龙乡地理空间数据说明.pdf"
+    docx = list((ROOT / "数据").rglob("镇龙乡地理空间数据说明.docx"))
     gw_h = COMM[("固定网关 G01", "天线离地高度（m）", "hG")]
     lim = {k: v for k, v in MY_COMM.items() if k.startswith("limit")}
 
