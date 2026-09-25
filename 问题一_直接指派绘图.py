@@ -1,15 +1,19 @@
-"""为问题一直接指派 MILP 汇集共享证据图，并绘制新算法流程与求解过程图。"""
+"""为问题一直接指派 MILP 汇集共享证据图，并绘制求解过程图与子问题流程图。"""
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 from utils.plot_style import choose_font
 from plot_q1_distance_terrain import main as plot_distance_terrain
 from plot_q1_rated_soc import main as plot_rated_soc
+from 问题一_流程图 import main as draw_flow_q1
+
+sys.path.insert(0, str(Path(r"C:\Users\mika\.claude\skills\math-modeling") / "tools" / "figure" / "scripts"))
+from export_figure import export_figure  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 TARGET = ROOT / "figures" / "问题一_非枚举整数规划"
@@ -28,29 +32,6 @@ def save(fig, name, size=(7.2, 4.2)):
                    encoding="utf-8")
     fig.savefig(TARGET / f"{name}.png", dpi=300)
     plt.close(fig)
-
-
-def flow(name, labels, loop_from, loop_to):
-    fig, ax = plt.subplots()
-    ax.set(xlim=(0, 7.4), ylim=(0, 1.12))
-    ax.axis("off")
-    for j, label in enumerate(labels):
-        xpos = 0.12 + j * 1.04
-        ax.add_patch(FancyBboxPatch((xpos, 0.35), 0.88, 0.3,
-                                    boxstyle="round,pad=0.03", linewidth=0.8,
-                                    edgecolor="#0072B2", facecolor="#E8F1F7"))
-        ax.text(xpos + 0.44, 0.5, label, ha="center", va="center", fontsize=7)
-        if j < len(labels) - 1:
-            ax.add_patch(FancyArrowPatch((xpos + 0.91, 0.5), (xpos + 1.02, 0.5),
-                                         arrowstyle="->", mutation_scale=8, linewidth=0.8))
-    start = 0.56 + loop_from * 1.04
-    end = 0.56 + loop_to * 1.04
-    ax.plot([start, start, end], [0.68, 0.86, 0.86], color="#D55E00", linewidth=0.85)
-    ax.annotate("", xy=(end, 0.68), xytext=(end, 0.86),
-                arrowprops={"arrowstyle": "->", "color": "#D55E00", "linewidth": 0.85})
-    ax.text((start + end) / 2, 0.91, "未满足能耗约束或间隙未收敛：新增切平面",
-            ha="center", va="bottom", fontsize=6.5, color="#A44A00")
-    save(fig, name, (7.2, 2.5))
 
 
 def main():
@@ -75,8 +56,8 @@ def main():
     ax.text(0.98, 0.97, f"最大能耗下界间隙: {max(gap):.2e} kWh",
             transform=ax.transAxes, ha="right", va="top", fontsize=8)
     save(fig, "process_q1_milp_calls")
-    flow("flow_overall_model", ["航段与货箱", "机型参数", "安全载荷", "逐箱指派", "MILP切平面", "真实能耗复核", "结果输出"], 5, 4)
-    flow("flow_q1_model", ["货箱数据", "航段载荷", "逐箱指派", "MILP三级优化", "真实能耗", "最优性判定", "余量与审计"], 5, 3)
+    # 子问题流程图按 Skill 的建模流程图规范由 问题一_流程图.py 生成（含 shape/越界/缺字自检）
+    draw_flow_q1()
     for path in TARGET.glob("*.svg"):
         path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n",
                         encoding="utf-8")
