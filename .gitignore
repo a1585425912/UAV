@@ -1,11 +1,27 @@
-__pycache__/
+﻿__pycache__/
 *.py[cod]
 ~$*
 .DS_Store
 Thumbs.db
+
+# 原始数据：不随仓库分发，复现时放回仓库根目录
 数据/
+
+# 图件只保留 PNG；灰度预览与 SVG 不入库
+**/*_grayscale.png
 figures/*_grayscale.png
 results/figure_previews/
-
-# 图件只保留 PNG（SVG 已按需求从仓库移除，重绘时不再入库）
 *.svg
+
+# 论文 / LaTeX 模板构建产物
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+#delete-temp-files.bat
+
+# 外部参考资料（已移出仓库到 ../_external）
+_external/
+2026华为杯数模研赛D题解题过程.pdf
+第二十三届华为杯latex模板*/
